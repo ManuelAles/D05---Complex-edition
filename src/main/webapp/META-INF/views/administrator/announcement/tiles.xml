@@ -1,0 +1,19 @@
+<!-- tiles.xml -->
+
+<!DOCTYPE tiles-definitions PUBLIC
+	"-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"
+	"http://tiles.apache.org/dts/tiles-config_3_0.dtd">
+	
+<tiles-definitions>
+
+	<!-- Administrator -->
+
+	<definition name="administrator/announcement/list" extends="master">
+		<put-attribute name="body" type="template" value="../administrator/announcement/list.jsp"/>
+	</definition>
+	
+	<definition name="administrator/announcement/form" extends="master">
+		<put-attribute name="body" type="template" value="../administrator/announcement/form.jsp"/>
+	</definition>
+	
+</tiles-definitions>

@@ -1,0 +1,25 @@
+# i18n_en.messages
+#
+# Copyright (c) 2019 Rafael Corchuelo.
+#
+# In keeping with the traditional purpose of furthering education and research, it is
+# the policy of the copyright owner to permit non-commercial use and redistribution of
+# this software. It has been tested carefully, but it is not guaranteed for any particular
+# purposes.  The copyright owner does not offer any warranties or representations, nor do
+# they accept any liabilities with respect to them.
+
+anonymous.company-record.list.label.name = Name
+anonymous.company-record.list.label.sector = Sector
+anonymous.company-record.list.label.stars = Stars
+
+anonymous.company-record.form.label.name = Name
+anonymous.company-record.form.label.sector = Sector
+anonymous.company-record.form.label.ceoName = CEO Name
+anonymous.company-record.form.label.activitiesDescription = Desc. Activities
+anonymous.company-record.form.label.web = Web
+anonymous.company-record.form.label.phone = Phone
+anonymous.company-record.form.label.mail = eMail
+anonymous.company-record.form.label.inc = INC?
+anonymous.company-record.form.label.stars = Stars
+
+anonymous.company-record.button.return = Return

@@ -1,0 +1,25 @@
+# i18n_en.messages
+
+administrator.challenge.list.label.deadline = Dead Line
+administrator.challenge.list.label.title = Title
+
+administrator.challenge.form.label.title = Title: 
+administrator.challenge.form.label.deadline = Dead line: 
+administrator.challenge.form.label.description = Description:
+administrator.challenge.form.label.goldReward = Gold reward:
+administrator.challenge.form.label.silverReward = Silver reward: 
+administrator.challenge.form.label.bronzeReward = Bronze reward: 
+administrator.challenge.form.label.goldGoal = Gold goal: 
+administrator.challenge.form.label.silverGoal = Silver goal:
+administrator.challenge.form.label.bronzeGoal = Bronze goal:
+administrator.challenge.form.button.return = Return 
+
+administrator.challenge.form.button.update = Update
+administrator.challenge.form.button.create = Create
+administrator.challenge.form.button.delete = Delete
+
+administrator.challenge.deadline.before = The deadline date is before from now!
+administrator.challenge.goldReward.eur = The monetary unit must be euros!
+administrator.challenge.silverReward.eur = The monetary unit must be euros!
+administrator.challenge.bronzeReward.eur = The monetary unit must be euros!
+administrator.challenge.rewards = The rewards must be equitable, the highest being gold

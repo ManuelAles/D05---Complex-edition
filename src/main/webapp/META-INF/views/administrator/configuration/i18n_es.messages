@@ -1,0 +1,20 @@
+# i18n_es.messages
+#
+# Copyright (c) 2019 Rafael Corchuelo.
+#
+# In keeping with the traditional purpose of furthering education and research, it is
+# the policy of the copyright owner to permit non-commercial use and redistribution of
+# this software. It has been tested carefully, but it is not guaranteed for any particular
+# purposes.  The copyright owner does not offer any warranties or representations, nor do
+# they accept any liabilities with respect to them.
+
+administrator.configuration.form.label.spamWordsEN = Palabras de spam en inglés
+administrator.configuration.form.label.spamWordsES = Palabras de spam en español
+administrator.configuration.form.label.threshold = Umbral (%)
+	
+administrator.configuration.form.button.update = Actualizar	
+administrator.configuration.form.button.return = Volver
+
+adminsitrator.configuration.error.empty = La lista de spam no puede estar vacía
+adminsitrator.configuration.error.higher = El umbral tiene que ser menor a 100.00
+adminsitrator.configuration.error.negative = El umbral no puede ser negativo 

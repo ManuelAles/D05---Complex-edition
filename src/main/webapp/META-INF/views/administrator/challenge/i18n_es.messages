@@ -1,0 +1,25 @@
+# i18n_es.messages
+
+administrator.challenge.list.label.deadline = Fecha Límite
+administrator.challenge.list.label.title = Título
+
+administrator.challenge.form.label.title = Título: 
+administrator.challenge.form.label.deadline = Fecha límite: 
+administrator.challenge.form.label.description = Descripción:
+administrator.challenge.form.label.goldReward = Recompensa de oro:
+administrator.challenge.form.label.silverReward = Recompensa de plata: 
+administrator.challenge.form.label.bronzeReward = Recompensa de bronce: 
+administrator.challenge.form.label.goldGoal = Objetivo para oro: 
+administrator.challenge.form.label.silverGoal = Objetivo para plata:
+administrator.challenge.form.label.bronzeGoal = Objetivo para bronce: 
+administrator.challenge.form.button.return = Volver
+
+administrator.challenge.form.button.update = Actualizar
+administrator.challenge.form.button.create = Crear
+administrator.challenge.form.button.delete = Borrar
+
+administrator.challenge.deadline.before = ¡La fecha final es anterior a la fecha actual!
+administrator.challenge.goldReward.eur = ¡La unidad monetaria deben ser euros!
+administrator.challenge.silverReward.eur = ¡La unidad monetaria deben ser euros!
+administrator.challenge.bronzeReward.eur = ¡La unidad monetaria deben ser euros!
+administrator.challenge.rewards = Las recompensas deben ser equitativas siendo la mayor la de oro

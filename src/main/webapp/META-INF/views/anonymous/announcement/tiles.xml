@@ -1,0 +1,19 @@
+<!-- tiles.xml -->
+
+<!DOCTYPE tiles-definitions PUBLIC
+	"-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"
+	"http://tiles.apache.org/dts/tiles-config_3_0.dtd">
+	
+<tiles-definitions>
+
+	<!-- Anonymous -->
+	
+	<definition name="anonymous/announcement/list" extends="master">
+		<put-attribute name="body" type="template" value="../anonymous/announcement/list.jsp"/>
+	</definition>
+	
+	<definition name="anonymous/announcement/form" extends="master">
+		<put-attribute name="body" type="template" value="../anonymous/announcement/form.jsp"/>
+	</definition>
+
+</tiles-definitions>

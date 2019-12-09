@@ -1,0 +1,15 @@
+# i18n_es.messages
+
+authenticated.challenge.list.label.deadline = Fecha Límite
+authenticated.challenge.list.label.title = Título
+
+authenticated.challenge.form.label.title = Título: 
+authenticated.challenge.form.label.deadline = Fecha límite: 
+authenticated.challenge.form.label.description = Descripción:
+authenticated.challenge.form.label.goldReward = Recompensa de oro:
+authenticated.challenge.form.label.silverReward = Recompensa de plata: 
+authenticated.challenge.form.label.bronzeReward = Recompensa de bronce: 
+authenticated.challenge.form.label.goldGoal = Objetivo para oro: 
+authenticated.challenge.form.label.silverGoal = Objetivo para plata:
+authenticated.challenge.form.label.bronzeGoal = Objetivo para bronce: 
+authenticated.challenge.form.button.return = Volver

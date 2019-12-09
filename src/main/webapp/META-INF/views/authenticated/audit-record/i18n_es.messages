@@ -1,0 +1,21 @@
+# i18n_es.messages
+#
+# Copyright (c) 2019 Rafael Corchuelo.
+#
+# In keeping with the traditional purpose of furthering education and research, it is
+# the policy of the copyright owner to permit non-commercial use and redistribution of
+# this software. It has been tested carefully, but it is not guaranteed for any particular
+# purposes.  The copyright owner does not offer any warranties or representations, nor do
+# they accept any liabilities with respect to them.
+
+authenticated.auditRecord.list.label.moment = Momento
+authenticated.auditRecord.list.label.job = Hecho para el trabajo
+authenticated.auditRecord.list.label.title = Titulo
+
+authenticated.auditRecord.form.label.title = Titulo:
+authenticated.auditRecord.form.label.deadline = Momento:
+authenticated.auditRecord.form.label.body = Cuerpo:
+
+
+authenticated.auditRecord.form.button.return = Volver
+authenticated.auditRecord.list.button.return.list = Volver a la lista de trabajos

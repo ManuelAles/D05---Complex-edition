@@ -1,0 +1,31 @@
+# i18n_en.messages
+#
+# Copyright (c) 2019 Rafael Corchuelo.
+#
+# In keeping with the traditional purpose of furthering education and research, it is
+# the policy of the copyright owner to permit non-commercial use and redistribution of
+# this software. It has been tested carefully, but it is not guaranteed for any particular
+# purposes.  The copyright owner does not offer any warranties or representations, nor do
+# they accept any liabilities with respect to them.
+
+
+consumer.offer.form.label.title = Title:
+consumer.offer.form.label.text = Text:
+consumer.offer.form.label.moment = Moment:
+consumer.offer.form.label.deadline = Deadline:
+consumer.offer.form.label.reward = Reward:
+consumer.offer.form.label.ticker = Ticker:
+consumer.offer.form.label.minMoney = Recompensa higher than: 
+consumer.offer.form.label.maxMoney = Recompensa lower than:
+
+consumer.offer.form.button.create = Create
+consumer.offer.form.button.create.confirm = Are you about create this offer? After you wonn't be able to delete it
+
+consumer.offer.error.must-accept = Must accept the checkboxx first
+consumer.offer.error.before = The deadline has to be after the current date
+consumer.offer.error.ticker = The ticker must be unique
+consumer.offer.error.maxMoney = The maxMoney has to be higher than the minMoney
+consumer.offer.error.minMoney = The minMoney has to be lower than the maxMoney
+consumer.offer.error.currency = The currency must be € or EUR
+
+consumer.offer.form.button.return = Return
