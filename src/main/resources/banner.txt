@@ -13,4 +13,4 @@
                     
 ${Ansi.DEFAULT}
 Powered by Spring Boot ${spring-boot.version}
-Powered by Acme-Jobs 2.19
+Powered by Starter-Project 2.19.3
