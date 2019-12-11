@@ -40,7 +40,7 @@ master.menu.authenticated.thread.list = Involved threads list
 # master.menu.authenticated ########################################################
 
 master.menu.authenticated = Authenticated
-master.menu.authenticated.reporting = Simple reporting as authenticated
+master.menu.authenticated.reporting = Authenticated
 master.menu.authenticated.announcement.list = List announcements
 master.menu.authenticated.request.list = Active requests
 master.menu.authenticated.offer.list = Active offers
@@ -101,6 +101,10 @@ master.menu.user-account.provider = Provider data
 master.menu.user-account.become-provider = Become a provider
 master.menu.user-account.consumer = Consumer data
 master.menu.user-account.become-consumer = Become a consumer
+master.menu.user-account.become-employer =  Become an employer
+master.menu.user-account.employer = Employer data
+master.menu.user-account.become-worker = Become a worker
+master.menu.user-account.worker = Worker data
 
 
 # master.footer ###############################################################
