@@ -9,10 +9,10 @@
 # they accept any liabilities with respect to them.
 
 authenticated.employer.employer.form.title.create = Hazte empleador
-authenticated.employer.employer.form.title.update = Actualizar datos de empleador
+authenticated.employer.employer.form.title.update = Actualizar datos de empleado
 
-authenticated.employer.form.label.company = Compañía
-authenticated.employer.form.label.sector = Sector
+authenticated.employer.form.label.company = Compañía: 
+authenticated.employer.form.label.sector = Sector:
 
 authenticated.employer.form.button.create = Registrar
 authenticated.employer.form.button.update = Actualizar
