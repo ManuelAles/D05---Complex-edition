@@ -156,7 +156,7 @@ public class WorkerApplicationCreateService implements AbstractCreateService<Wor
 
 		//Como algunos elementos de la lista de spam tienen mas de una palabra hay que detectar ese spam de otra forma
 
-		//Recorremos la lista de spam
+		//Entonces recorremos la lista de spam
 		for (String s2 : spam) {
 			//Contamos el número de palabras que tiene ese elemento de spam
 			StringTokenizer stringTokenizer = new StringTokenizer(s2);
