@@ -9,7 +9,8 @@
 # they accept any liabilities with respect to them.
 
 authenticated.worker.worker.form.title.create = Hazte trabajador
-authenticated.worker.worker.form.title.update = Actualizar datos de empleado
+
+authenticated.worker.worker.form.title.update = Actualizar datos de trabajador
 
 authenticated.worker.form.label.qualifications = Calificaciones: 
 authenticated.worker.form.label.skills = Habilidades:

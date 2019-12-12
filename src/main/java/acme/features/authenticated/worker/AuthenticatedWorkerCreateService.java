@@ -30,13 +30,17 @@ import acme.framework.services.AbstractCreateService;
 @Service
 public class AuthenticatedWorkerCreateService implements AbstractCreateService<Authenticated, Worker> {
 
+
 	// Internal state ---------------------------------------------------------
+
 
 	@Autowired
 	private AuthenticatedWorkerRepository repository;
 
 
-	// AbstractCreateService<Authenticated, Provider> interface ---------------
+
+	// AbstractCreateService<Authenticated, Worker> interface ---------------
+
 
 	@Override
 	public boolean authorise(final Request<Worker> request) {
@@ -87,6 +91,7 @@ public class AuthenticatedWorkerCreateService implements AbstractCreateService<A
 		assert request != null;
 		assert entity != null;
 		assert errors != null;
+
 	}
 
 	@Override
@@ -95,6 +100,7 @@ public class AuthenticatedWorkerCreateService implements AbstractCreateService<A
 		assert entity != null;
 
 		this.repository.save(entity);
+
 	}
 
 	@Override

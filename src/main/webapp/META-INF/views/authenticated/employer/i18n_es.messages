@@ -8,7 +8,7 @@
 # purposes.  The copyright owner does not offer any warranties or representations, nor do
 # they accept any liabilities with respect to them.
 
-authenticated.employer.employer.form.title.create = Hazte empleado
+authenticated.employer.employer.form.title.create = Hazte empleador
 authenticated.employer.employer.form.title.update = Actualizar datos de empleado
 
 authenticated.employer.form.label.company = Compañía: 

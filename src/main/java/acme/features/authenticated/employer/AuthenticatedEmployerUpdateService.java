@@ -10,6 +10,7 @@
  * they accept any liabilities with respect to them.
  */
 
+
 package acme.features.authenticated.employer;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,13 +30,17 @@ import acme.framework.services.AbstractUpdateService;
 @Service
 public class AuthenticatedEmployerUpdateService implements AbstractUpdateService<Authenticated, Employer> {
 
-	// Internal state ---------------------------------------------------------
+
+	// Internal state -------------------------------------------------------------------
+
 
 	@Autowired
 	private AuthenticatedEmployerRepository repository;
 
 
+
 	// AbstractUpdateService<Authenticated, Employer> interface ---------------
+
 
 	@Override
 	public boolean authorise(final Request<Employer> request) {
@@ -83,6 +88,7 @@ public class AuthenticatedEmployerUpdateService implements AbstractUpdateService
 		assert request != null;
 		assert entity != null;
 		assert errors != null;
+
 	}
 
 	@Override
@@ -91,6 +97,7 @@ public class AuthenticatedEmployerUpdateService implements AbstractUpdateService
 		assert entity != null;
 
 		this.repository.save(entity);
+
 	}
 
 	@Override

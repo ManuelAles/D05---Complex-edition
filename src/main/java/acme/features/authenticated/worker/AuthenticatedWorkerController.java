@@ -10,6 +10,7 @@
  * they accept any liabilities with respect to them.
  */
 
+
 package acme.features.authenticated.worker;
 
 import javax.annotation.PostConstruct;
@@ -27,7 +28,7 @@ import acme.framework.entities.Authenticated;
 @RequestMapping("/authenticated/worker/")
 public class AuthenticatedWorkerController extends AbstractController<Authenticated, Worker> {
 
-	// Internal state ---------------------------------------------------------
+	// Internal state ------------------------------------------------------------------------
 
 	@Autowired
 	private AuthenticatedWorkerCreateService	createService;
@@ -36,7 +37,7 @@ public class AuthenticatedWorkerController extends AbstractController<Authentica
 	private AuthenticatedWorkerUpdateService	updateService;
 
 
-	// Constructors -----------------------------------------------------------
+	// Constructors -------------------------------------------------------------------------
 
 	@PostConstruct
 	private void initialise() {

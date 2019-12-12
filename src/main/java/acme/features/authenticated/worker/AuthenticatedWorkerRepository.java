@@ -10,6 +10,7 @@
  * they accept any liabilities with respect to them.
  */
 
+
 package acme.features.authenticated.worker;
 
 import org.springframework.data.jpa.repository.Query;

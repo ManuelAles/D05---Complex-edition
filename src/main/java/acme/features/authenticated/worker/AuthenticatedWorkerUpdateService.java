@@ -31,8 +31,10 @@ public class AuthenticatedWorkerUpdateService implements AbstractUpdateService<A
 
 	// Internal state ---------------------------------------------------------
 
+
 	@Autowired
 	private AuthenticatedWorkerRepository repository;
+
 
 
 	// AbstractUpdateService<Authenticated, Worker> interface ---------------
@@ -83,7 +85,8 @@ public class AuthenticatedWorkerUpdateService implements AbstractUpdateService<A
 		assert request != null;
 		assert entity != null;
 		assert errors != null;
-	}
+
+  }
 
 	@Override
 	public void update(final Request<Worker> request, final Worker entity) {
