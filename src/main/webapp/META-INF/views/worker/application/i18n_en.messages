@@ -16,8 +16,13 @@ worker.application.form.label.reference = Reference:
 worker.application.form.label.moment = Moment:
 worker.application.form.label.status = Status:
 worker.application.form.label.statement = Statement:
-worker.application.label.skills = Skills:
-worker.application.label.qualifications = Qualifications:
-worker.application.label.job = Job title:
+worker.application.form.label.skills = Skills:
+worker.application.form.label.qualifications = Qualifications:
+worker.application.form.label.job = Job title:
 
+worker.application.form.button.create = Submit
 worker.application.form.button.return = Return
+
+worker.application.error.reference = The reference is not unique
+worker.application.error.spam = The text string exceeds the spam percentage
+worker.application.error.unique = A worker cannot apply for a job he has already requested

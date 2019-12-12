@@ -15,11 +15,17 @@
 	<acme:form-textarea code="authenticated.job.form.label.description" path="descriptor.description"/>
 	
 		<button type="button" formmethod="get" class="btn btn-default" onclick="location.href= 'authenticated/duty/list_by_job?id=${id}'">
-		<acme:message code="authenticated.job.form.label.duties" />
+		<acme:message code="authenticated.job.form.button.duties" />
 	</button>
 	
+
 	<button type="button" formmethod="get" class="btn btn-default" onclick="location.href= 'authenticated/audit-record/list_by_job?id=${id}'">
-		<acme:message code="authenticated.job.form.label.auditRecords" />
+		<acme:message code="authenticated.job.form.button.auditRecords" />
+	</button>
+	
+		<jstl:set var="jobId" value="${id}"/>
+	<button type="button" formmethod="get" class="btn btn-default" onclick="location.href= 'worker/application/create?jobId=${jobId}'">
+		<acme:message code="authenticated.job.form.button.application" />
 	</button>
 	
 	<acme:form-return code="authenticated.job.form.button.return"/>

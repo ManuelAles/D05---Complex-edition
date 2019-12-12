@@ -30,6 +30,6 @@
 		action="/administrator/announcement/update"/>
 	<acme:form-submit test="${command == 'delete'}"
 		code="administrator.announcement.form.button.delete" 
-		action="/administrator/announcement/delete "/>		
+		action="/administrator/announcement/delete"/>		
 	<acme:form-return code="administrator.announcement.form.button.return"/>
 </acme:form>

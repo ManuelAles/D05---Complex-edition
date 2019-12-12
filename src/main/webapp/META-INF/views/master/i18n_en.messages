@@ -40,7 +40,7 @@ master.menu.authenticated.thread.list = Involved threads list
 # master.menu.authenticated ########################################################
 
 master.menu.authenticated = Authenticated
-master.menu.authenticated.reporting = Simple reporting as authenticated
+master.menu.authenticated.reporting = Authenticated
 master.menu.authenticated.announcement.list = List announcements
 master.menu.authenticated.request.list = Active requests
 master.menu.authenticated.offer.list = Active offers
