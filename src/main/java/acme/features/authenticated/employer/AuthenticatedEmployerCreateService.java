@@ -19,13 +19,13 @@ import acme.framework.services.AbstractCreateService;
 @Service
 public class AuthenticatedEmployerCreateService implements AbstractCreateService<Authenticated, Employer> {
 
-	// Internal State--------------------------------------------------------------------------------------
+	// Internal state ---------------------------------------------------------
 
 	@Autowired
 	private AuthenticatedEmployerRepository repository;
 
 
-	// AbstractCreateService<Authenticated, Employer> interface --------------------------------------------
+	// AbstractCreateService<Authenticated, Provider> interface ---------------
 
 	@Override
 	public boolean authorise(final Request<Employer> request) {
@@ -50,7 +50,6 @@ public class AuthenticatedEmployerCreateService implements AbstractCreateService
 		assert model != null;
 
 		request.unbind(entity, model, "company", "sector");
-
 	}
 
 	@Override
@@ -77,7 +76,6 @@ public class AuthenticatedEmployerCreateService implements AbstractCreateService
 		assert request != null;
 		assert entity != null;
 		assert errors != null;
-
 	}
 
 	@Override
@@ -86,7 +84,6 @@ public class AuthenticatedEmployerCreateService implements AbstractCreateService
 		assert entity != null;
 
 		this.repository.save(entity);
-
 	}
 
 	@Override
