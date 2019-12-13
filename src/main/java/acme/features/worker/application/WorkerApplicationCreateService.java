@@ -31,8 +31,23 @@ public class WorkerApplicationCreateService implements AbstractCreateService<Wor
 	@Override
 	public boolean authorise(final Request<Application> request) {
 		assert request != null;
+		Boolean result = true;
 
-		return true;
+		Job job;
+		int jobId;
+		jobId = request.getModel().getInteger("jobId");
+		job = this.repository.findJobById(jobId);
+
+		Principal principal;
+		principal = request.getPrincipal();
+		int workerId = this.repository.findWorkerByUserAccountId(principal.getAccountId()).getId();
+
+		Date d;
+		d = new Date(System.currentTimeMillis() - 1);
+
+		result = this.repository.findByJobAndWorker(workerId, jobId) == null && job.isFinalMode() == true && job.getDeadline().after(d);
+
+		return result;
 	}
 
 	@Override
@@ -60,6 +75,12 @@ public class WorkerApplicationCreateService implements AbstractCreateService<Wor
 		Application result;
 		result = new Application();
 
+		Job job;
+		int jobId;
+		jobId = request.getModel().getInteger("jobId");
+		job = this.repository.findJobById(jobId);
+		result.setJob(job);
+
 		Worker worker;
 		int workerId;
 		Principal principal;
@@ -68,19 +89,13 @@ public class WorkerApplicationCreateService implements AbstractCreateService<Wor
 		worker = this.repository.findWorkerByUserAccountId(workerId);
 		result.setWorker(worker);
 
-		Job job;
-		int jobId;
-		jobId = request.getModel().getInteger("jobId");
-		job = this.repository.findJobById(jobId);
-		result.setJob(job);
+		result.setQualifications(worker.getQualificationRecord());
+		result.setSkills(worker.getSkillRecord());
 
 		String status;
 		status = "PENDING";
 		result.setStatus(status);
 
-		System.out.println(result.toString());
-		System.out.println(result.getJob());
-		System.out.println(result.getWorker());
 		return result;
 	}
 
@@ -95,25 +110,14 @@ public class WorkerApplicationCreateService implements AbstractCreateService<Wor
 		notUnique = this.repository.findByRefence(entity.getReference()) != null;
 
 		//Comprueba que las cadenas no tienen spam
-		Boolean spamR, spamT, spamS, spamQ = null;
+		Boolean spamR, spamT = null;
 		spamR = this.esSpam(entity.getReference());
 		spamT = this.esSpam(entity.getStatement());
-		spamS = this.esSpam(entity.getSkills());
-		spamQ = this.esSpam(entity.getQualifications());
-
-		Boolean unique = null;
-		Principal principal;
-		principal = request.getPrincipal();
-		int workerId = this.repository.findWorkerByUserAccountId(principal.getAccountId()).getId();
-		int jobId = request.getModel().getInteger("jobId");
-		unique = this.repository.findByJobAndWorker(workerId, jobId) == null;
 
 		errors.state(request, !notUnique, "reference", "worker.application.error.reference");
 		errors.state(request, !spamR, "reference", "worker.application.error.spam");
 		errors.state(request, !spamT, "statement", "worker.application.error.spam");
-		errors.state(request, !spamS, "skills", "worker.application.error.spam");
-		errors.state(request, !spamQ, "qualifications", "worker.application.error.spam");
-		errors.state(request, unique, "reference", "worker.application.error.unique");
+
 	}
 
 	@Override

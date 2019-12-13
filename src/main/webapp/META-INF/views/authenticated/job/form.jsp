@@ -3,6 +3,7 @@
 <%@page language="java"%>
 
 <%@taglib prefix="jstl" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@taglib prefix="security" uri="http://www.springframework.org/security/tags"%>
 <%@taglib prefix="acme" tagdir="/WEB-INF/tags"%>
 
 <acme:form readonly="true">
@@ -23,10 +24,12 @@
 		<acme:message code="authenticated.job.form.button.auditRecords" />
 	</button>
 	
-		<jstl:set var="jobId" value="${id}"/>
+	<security:authorize access="hasRole('Worker')">
+	<jstl:set var="jobId" value="${id}"/>
 	<button type="button" formmethod="get" class="btn btn-default" onclick="location.href= 'worker/application/create?jobId=${jobId}'">
 		<acme:message code="authenticated.job.form.button.application" />
 	</button>
+	</security:authorize>
 	
 	<acme:form-return code="authenticated.job.form.button.return"/>
 </acme:form>

@@ -459,12 +459,23 @@
 	<bean name="job5" class="acme.entities.jobs.Job">
 		<property name="reference" value="EMP2-JOB5" />
 		<property name="title" value="Title 5" />
-		<property name="deadline" value="2029/12/11 23:59" />
+		<property name="deadline" value="2022/12/11 23:59" />
 		<property name="salary" value="€ 15,000.98" />
 		<property name="moreInfo" value="http://www.example.com" />
 		<property name="finalMode" value="true" />
 		<property name="employer" ref="employer2Employer" />
 		<property name="descriptor" ref="descriptor5" />
+	</bean>
+	
+	<bean name="job6" class="acme.entities.jobs.Job">
+		<property name="reference" value="EMP2-JOB6" />
+		<property name="title" value="Title 6" />
+		<property name="deadline" value="2010/12/11 23:59" />
+		<property name="salary" value="€ 15,000.98" />
+		<property name="moreInfo" value="http://www.example.com" />
+		<property name="finalMode" value="true" />
+		<property name="employer" ref="employer2Employer" />
+		<property name="descriptor" ref="descriptor6" />
 	</bean>
 
 	<!-- Descriptors -->
@@ -491,7 +502,10 @@
 
 	<bean name="descriptor5" class="acme.entities.descriptors.Descriptor">
 		<property name="description" value="Sample description" />
-
+	</bean>
+	
+	<bean name="descriptor6" class="acme.entities.descriptors.Descriptor">
+		<property name="description" value="Sample description" />
 	</bean>
 
 	<!-- Duties -->
