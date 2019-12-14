@@ -4,10 +4,13 @@ package acme.features.employer.duty;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import acme.entities.descriptors.Descriptor;
 import acme.entities.duties.Duty;
+import acme.entities.jobs.Job;
 import acme.entities.roles.Employer;
 import acme.framework.components.Model;
 import acme.framework.components.Request;
+import acme.framework.entities.Principal;
 import acme.framework.services.AbstractShowService;
 
 @Service
@@ -25,7 +28,23 @@ public class EmployerDutyShowService implements AbstractShowService<Employer, Du
 	public boolean authorise(final Request<Duty> request) {
 		assert request != null;
 
-		return true;
+		boolean result;
+		int dutyId;
+		Duty duty;
+		Employer employer;
+		Principal principal;
+		Descriptor descriptor;
+		Job job;
+
+		dutyId = request.getModel().getInteger("id");
+		duty = this.repository.findDutyById(dutyId);
+		descriptor = duty.getDescriptor();
+		job = this.repository.findJobByDescriptorId(descriptor.getId());
+		employer = job.getEmployer();
+		principal = request.getPrincipal();
+		result = employer.getUserAccount().getId() == principal.getAccountId();
+
+		return result;
 	}
 
 	@Override

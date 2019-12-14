@@ -23,10 +23,7 @@ public class Configuration extends DomainEntity {
 	// Attributes -------------------------------------------------------------
 
 	@NotBlank
-	private String				spamWordsEN;
-
-	@NotBlank
-	private String				spamWordsES;
+	private String				spamWords;
 
 	@NotNull
 	@Min(0)

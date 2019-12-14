@@ -20,6 +20,7 @@ employer.job.form.label.moreInfo = Más información:
 employer.job.form.label.description = Descripción:
 employer.job.form.label.finalMode = Publicado
 
+employer.job.form.button.duty.create = Crear una tarea para este trabajo
 employer.job.form.label.duties = Lista de tareas de este trabajo
 employer.job.form.label.auditRecords =  Lista de registros de auditoria de este trabajo
 

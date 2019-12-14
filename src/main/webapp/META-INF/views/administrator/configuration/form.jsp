@@ -17,8 +17,7 @@
 
 <acme:form>
 
-	<acme:form-textarea code="administrator.configuration.form.label.spamWordsEN" path="spamWordsEN" />
-	<acme:form-textarea code="administrator.configuration.form.label.spamWordsES" path="spamWordsES" />
+	<acme:form-textarea code="administrator.configuration.form.label.spamWords" path="spamWords" />
 	<acme:form-textbox code="administrator.configuration.form.label.threshold" path="threshold" />
 	
 		<acme:form-submit test="${command == 'show'}"
