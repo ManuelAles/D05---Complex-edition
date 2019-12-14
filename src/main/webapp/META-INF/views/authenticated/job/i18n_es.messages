@@ -19,7 +19,8 @@ authenticated.job.form.label.salary = Salario:
 authenticated.job.form.label.moreInfo = Más información:
 authenticated.job.form.label.description = Descripción:
 
-authenticated.job.form.label.duties = Lista de objetivos de este trabajo
-authenticated.job.form.label.auditRecords = Lista de registros de auditoria de este trabajo
+authenticated.job.form.button.duties = Lista de objetivos de este trabajo
+authenticated.job.form.button.auditRecords = Lista de registros de auditoria de este trabajo
+authenticated.job.form.button.application = Mandar una solicitud para este trabajo
 
 authenticated.job.form.button.return = Volver

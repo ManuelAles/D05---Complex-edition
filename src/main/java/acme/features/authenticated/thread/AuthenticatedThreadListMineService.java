@@ -27,6 +27,7 @@ public class AuthenticatedThreadListMineService implements AbstractListService<A
 		assert request != null;
 
 		return true;
+
 	}
 
 	@Override

@@ -1,6 +1,8 @@
 
 package acme.features.authenticated.announcement;
 
+import java.util.Date;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -25,7 +27,20 @@ public class AuthenticatedAnnouncementShowService implements AbstractShowService
 	public boolean authorise(final Request<Announcement> request) {
 		assert request != null;
 
-		return true;
+		Boolean result;
+
+		Announcement a;
+		int id;
+		id = request.getModel().getInteger("id");
+		a = this.repository.findOneById(id);
+
+		Date moment;
+		moment = new Date();
+		moment.setMonth(moment.getMonth() - 1);
+
+		result = a.getMoment().after(moment);
+
+		return result;
 	}
 
 	@Override

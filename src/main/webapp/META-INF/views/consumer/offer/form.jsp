@@ -17,7 +17,14 @@
 <acme:form>
 
 	<acme:form-textbox code="consumer.offer.form.label.title" path="title" />
-	<acme:form-moment code="consumer.offer.form.label.moment" path="moment" readonly="true" />	
+	
+	<jstl:if test="${command != 'create'}">
+		<acme:form-moment 
+		code="consumer.offer.form.label.moment"
+		path="moment"
+		readonly="true"/>
+	</jstl:if>	
+	
 	<acme:form-moment code="consumer.offer.form.label.deadline" path="deadline" />
 	<acme:form-textbox code="consumer.offer.form.label.text" path="text" />		
 	<acme:form-money code="consumer.offer.form.label.minMoney" path="minMoney" />	
