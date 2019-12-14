@@ -79,5 +79,6 @@
 	<property name="spamWords" value="sex,sexo,hardcore,viagra,cialis,Nigeria,you've won,has ganado,million dolar,un millon de dólares"/>
 		<property name="threshold" value="1.0"/>	
 	</bean>
+
 	
 </beans>

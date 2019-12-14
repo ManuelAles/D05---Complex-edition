@@ -25,12 +25,16 @@ public class EmployerDutyController extends AbstractController<Employer, Duty> {
 	@Autowired
 	private EmployerDutyShowService			showService;
 
+	@Autowired
+	private EmployerDutyCreateService		createService;
+
 
 	//	Constructors ------
 
 	@PostConstruct
 	private void initialise() {
 		super.addBasicCommand(BasicCommand.SHOW, this.showService);
+		super.addBasicCommand(BasicCommand.CREATE, this.createService);
 		super.addCustomCommand(CustomCommand.LIST_BY_JOB, BasicCommand.LIST, this.listByJobService);
 	}
 }

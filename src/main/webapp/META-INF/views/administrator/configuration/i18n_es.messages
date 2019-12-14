@@ -8,6 +8,7 @@
 # purposes.  The copyright owner does not offer any warranties or representations, nor do
 # they accept any liabilities with respect to them.
 
+
 administrator.configuration.form.label.spamWords = Palabras de spam
 administrator.configuration.form.label.threshold = Umbral (%)
 	

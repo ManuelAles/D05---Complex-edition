@@ -428,7 +428,7 @@
 		<property name="deadline" value="2010/12/11 23:59" />
 		<property name="salary" value="€ 15,000.98" />
 		<property name="moreInfo" value="http://www.example.com" />
-		<property name="finalMode" value="true" />
+		<property name="finalMode" value="false" />
 		<property name="employer" ref="employer2Employer" />
 		<property name="descriptor" ref="descriptor6" />
 	</bean>
@@ -456,6 +456,10 @@
 	</bean>
 
 	<bean name="descriptor5" class="acme.entities.descriptors.Descriptor">
+		<property name="description" value="Sample description" />
+	</bean>
+	
+	<bean name="descriptor6" class="acme.entities.descriptors.Descriptor">
 		<property name="description" value="Sample description" />
 	</bean>
 	
@@ -503,8 +507,8 @@
 	<bean name="duty6" class="acme.entities.duties.Duty">
 		<property name="title" value="Second duty" />
 		<property name="description" value="Sample description" />
-		<property name="percentage" value="100.0" />
-		<property name="descriptor" ref="descriptor5"/>
+		<property name="percentage" value="99.0" />
+		<property name="descriptor" ref="descriptor6"/>
 	</bean>
 
 	<!-- Applications -->
