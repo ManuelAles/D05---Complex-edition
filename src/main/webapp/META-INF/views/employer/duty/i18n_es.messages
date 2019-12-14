@@ -11,10 +11,14 @@
 
 employer.duty.list.label.title = Titulo
 employer.duty.list.label.percentage = Porcentaje de trabajo
-employer.duty.list.button.return = Volver
+employer.duty.list.button.return = Volver a la lista de trabajos
 
 employer.duty.form.label.title = Titulo:
-employer.duty.form.label.description = Descripción:
+employer.duty.form.b.description = Descripción:
 employer.duty.form.label.percentage = Porcentaje de trabajo:
 
-employer.duty.list.button.return.list = Volver a la lista de trabajos
+employer.duty.form.button.create = Crear
+employer.duty.form.button.return = Volver 
+
+employer.duty.error.negative = No puede ser un número negativo
+employer.duty.error.higher = No puede ser un número mayor de 100

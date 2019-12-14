@@ -43,7 +43,7 @@ public class AdministratorConfigurationUpdateService implements AbstractUpdateSe
 		assert entity != null;
 		assert model != null;
 
-		request.unbind(entity, model, "spamWordsEN", "spamWordsES", "threshold");
+		request.unbind(entity, model, "spamWords", "threshold");
 	}
 
 	@Override
@@ -63,11 +63,8 @@ public class AdministratorConfigurationUpdateService implements AbstractUpdateSe
 		assert entity != null;
 		assert errors != null;
 
-		Boolean isEmpty = !request.getModel().getString("spamWordsES").isEmpty();
-		errors.state(request, isEmpty, "spamWordsES", "adminsitrator.configuration.error.empty");
-
-		Boolean isEmpty2 = !request.getModel().getString("spamWordsEN").isEmpty();
-		errors.state(request, isEmpty2, "spamWordsEN", "adminsitrator.configuration.error.empty");
+		Boolean isEmpty = !request.getModel().getString("spamWords").isEmpty();
+		errors.state(request, isEmpty, "spamWords", "adminsitrator.configuration.error.empty");
 
 		Boolean isNegative = !(request.getModel().getDouble("threshold") < 0.00);
 		Boolean isHigher = !(request.getModel().getDouble("threshold") > 100.00);
@@ -81,8 +78,7 @@ public class AdministratorConfigurationUpdateService implements AbstractUpdateSe
 		assert request != null;
 		assert entity != null;
 
-		entity.setSpamWordsEN(request.getModel().getString("spamWordsEN"));
-		entity.setSpamWordsES(request.getModel().getString("spamWordsES"));
+		entity.setSpamWords(request.getModel().getString("spamWords"));
 		entity.setThreshold(request.getModel().getDouble("threshold"));
 
 		this.repository.save(entity);
