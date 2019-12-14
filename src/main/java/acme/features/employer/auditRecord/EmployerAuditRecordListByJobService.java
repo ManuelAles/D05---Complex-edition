@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import acme.entities.auditRecords.AuditRecord;
+import acme.entities.jobs.Job;
 import acme.entities.roles.Employer;
 import acme.framework.components.Model;
 import acme.framework.components.Request;
@@ -27,7 +28,15 @@ public class EmployerAuditRecordListByJobService implements AbstractListService<
 	public boolean authorise(final Request<AuditRecord> request) {
 		assert request != null;
 
-		return true;
+		Boolean result;
+
+		Job job;
+
+		job = this.repository.findJobById(request.getModel().getInteger("id"));
+
+		result = job.getEmployer().getId() == request.getPrincipal().getActiveRoleId();
+
+		return result;
 	}
 
 	@Override

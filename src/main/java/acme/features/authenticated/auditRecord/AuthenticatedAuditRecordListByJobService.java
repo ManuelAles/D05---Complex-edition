@@ -2,11 +2,13 @@
 package acme.features.authenticated.auditRecord;
 
 import java.util.Collection;
+import java.util.Date;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import acme.entities.auditRecords.AuditRecord;
+import acme.entities.jobs.Job;
 import acme.framework.components.Model;
 import acme.framework.components.Request;
 import acme.framework.entities.Authenticated;
@@ -27,7 +29,16 @@ public class AuthenticatedAuditRecordListByJobService implements AbstractListSer
 	public boolean authorise(final Request<AuditRecord> request) {
 		assert request != null;
 
-		return true;
+		Boolean result;
+
+		Job job;
+		job = this.repository.findJobById(request.getModel().getInteger("id"));
+
+		Date moment;
+		moment = new Date();
+		result = job.getDeadline().after(moment) && job.isFinalMode();
+
+		return result;
 	}
 
 	@Override
