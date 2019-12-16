@@ -15,7 +15,7 @@
 
 	<bean id="announcement1" class="acme.entities.announcements.Announcement">
 		<property name="title" value="Sample announcement 01" />
-		<property name="moment" value="2019/11/03 10:40" />
+		<property name="moment" value="2019/12/03 10:40" />
 		<property name="moreInfo">
 			<null />
 		</property>
@@ -42,6 +42,20 @@
 		<property name="moreInfo" value="http://www.example.com" />
 		<property name="text" value="Este si tiene menos de un mes" />
 	</bean>
+	
+	<bean id="announcement5" class="acme.entities.announcements.Announcement">
+		<property name="title" value="Sample announcement 05" />
+		<property name="moment" value="2019/12/01 09:40" />
+		<property name="moreInfo" value="http://www.example.com" />
+		<property name="text" value="Este si tiene menos de unos días" />
+	</bean>
+	
+	<bean id="announcement6" class="acme.entities.announcements.Announcement">
+		<property name="title" value="Sample announcement 06" />
+		<property name="moment" value="2019/12/01 09:40" />
+		<property name="moreInfo" value="http://www.example.com" />
+		<property name="text" value="Este si tiene menos de unos días" />
+	</bean>
 
 	<!-- Challenges -->
 
@@ -49,9 +63,9 @@
 		<property name="title" value="Sample challenge 01" />
 		<property name="deadline" value="2020/06/28 23:59" />
 		<property name="description" value="This is a simple description!" />
-		<property name="goldReward" ref="money3" />
-		<property name="silverReward" ref="money4" />
-		<property name="bronzeReward" ref="money5" />
+		<property name="goldReward"  value="€ 15,000.00" />
+		<property name="silverReward"  value="€ 10,000.00" />
+		<property name="bronzeReward"  value="€ 5,000.00" />
 		<property name="goldGoal" value="Get the requirements of A!" />
 		<property name="silverGoal" value="Get the requirements of B!" />
 		<property name="bronzeGoal" value="Get the requirements of C!" />
@@ -61,9 +75,9 @@
 		<property name="title" value="Sample challenge 02" />
 		<property name="deadline" value="2019/07/20 09:00" />
 		<property name="description" value="This is a simple description!" />
-		<property name="goldReward" ref="money3" />
-		<property name="silverReward" ref="money4" />
-		<property name="bronzeReward" ref="money5" />
+		<property name="goldReward"  value="€ 15,000.00" />
+		<property name="silverReward"  value="€ 10,000.00" />
+		<property name="bronzeReward"  value="€ 5,000.00" />
 		<property name="goldGoal" value="Get the requirements of A!" />
 		<property name="silverGoal" value="Get the requirements of B!" />
 		<property name="bronzeGoal" value="Get the requirements of C!" />
@@ -73,9 +87,33 @@
 		<property name="title" value="Sample challenge 03" />
 		<property name="deadline" value="2018/11/04 12:00" />
 		<property name="description" value="This is a simple description!" />
-		<property name="goldReward" ref="money3" />
-		<property name="silverReward" ref="money4" />
-		<property name="bronzeReward" ref="money5" />
+		<property name="goldReward"  value="€ 15,000.00" />
+		<property name="silverReward"  value="€ 10,000.00" />
+		<property name="bronzeReward"  value="€ 5,000.00" />
+		<property name="goldGoal" value="Get the requirements of A!" />
+		<property name="silverGoal" value="Get the requirements of B!" />
+		<property name="bronzeGoal" value="Get the requirements of C!" />
+	</bean>
+	
+	<bean id="challenge4" class="acme.entities.challenges.Challenge">
+		<property name="title" value="Sample challenge 04" />
+		<property name="deadline" value="2020/12/28 20:59" />
+		<property name="description" value="This is a simple description!" />
+		<property name="goldReward"  value="€ 15,000.00" />
+		<property name="silverReward"  value="€ 10,000.00" />
+		<property name="bronzeReward"  value="€ 5,000.00" />
+		<property name="goldGoal" value="Get the requirements of A!" />
+		<property name="silverGoal" value="Get the requirements of B!" />
+		<property name="bronzeGoal" value="Get the requirements of C!" />
+	</bean>
+	
+	<bean id="challenge5" class="acme.entities.challenges.Challenge">
+		<property name="title" value="Sample challenge 05" />
+		<property name="deadline" value="2020/08/28 23:50" />
+		<property name="description" value="This is a simple description!" />
+		<property name="goldReward"  value="€ 15,000.00" />
+		<property name="silverReward"  value="€ 10,000.00" />
+		<property name="bronzeReward"  value="€ 5,000.00" />
 		<property name="goldGoal" value="Get the requirements of A!" />
 		<property name="silverGoal" value="Get the requirements of B!" />
 		<property name="bronzeGoal" value="Get the requirements of C!" />
@@ -89,32 +127,44 @@
 		<property name="moment" value="2019/11/01 19:10" />
 		<property name="deadline" value="2020/10/10 19:10" />
 		<property name="text" value="This is a recent announcement" />
-		<property name="reward">
-			<ref bean="money1" />
-		</property>
+		<property name="reward" value="€ 15,000.08" />		
 		<property name="ticker" value="RACBD-12845" />
 	</bean>
 
 	<bean id="request2" class="acme.entities.requests.Request">
 		<property name="title" value="Sample request 02" />
 		<property name="moment" value="2019/09/10 19:10" />
-		<property name="deadline" value="2020/01/01 19:10" />
+		<property name="deadline" value="2019/10/01 19:10" />
 		<property name="text" value="This is a announcement was made in September" />
-		<property name="reward">
-			<ref bean="money1" />
-		</property>
+		<property name="reward" value="€ 15,000.00" />
 		<property name="ticker" value="RACBD-17345" />
 	</bean>
 
 	<bean id="request3" class="acme.entities.requests.Request">
 		<property name="title" value="Sample request 03" />
-		<property name="moment" value="2018/10/10 19:10" />
-		<property name="deadline" value="2019/11/01 19:10" />
+		<property name="moment" value="2019/10/10 19:10" />
+		<property name="deadline" value="2020/11/01 19:10" />
 		<property name="text" value="This is a old announcement" />
-		<property name="reward">
-			<ref bean="money1" />
-		</property>
+		<property name="reward" value="€ 15,000.00" />
 		<property name="ticker" value="RACBD-02345" />
+	</bean>
+	
+	<bean id="request4" class="acme.entities.requests.Request">
+		<property name="title" value="Sample request 04" />
+		<property name="moment" value="2019/09/10 19:10" />
+		<property name="deadline" value="2021/10/01 19:00" />
+		<property name="text" value="This is a announcement that was made in September" />
+		<property name="reward" value="€ 15,000.00" />
+		<property name="ticker" value="RACBD-17385" />
+	</bean>
+
+	<bean id="request5" class="acme.entities.requests.Request">
+		<property name="title" value="Sample request 05" />
+		<property name="moment" value="2019/10/10 19:10" />
+		<property name="deadline" value="2022/11/01 19:00" />
+		<property name="text" value="This is a old announcement that was made in October" />
+		<property name="reward" value="€ 15,000.00" />
+		<property name="ticker" value="RACBD-02395" />
 	</bean>
 
 	<!-- Offers -->
@@ -124,26 +174,18 @@
 		<property name="moment" value="2019/10/10 19:10" />
 		<property name="deadline" value="2019/11/10 19:10" />
 		<property name="text" value="The new offer is here!" />
-		<property name="minMoney">
-			<ref bean="money1" />
-		</property>
-		<property name="maxMoney">
-			<ref bean="money2" />
-		</property>
+		<property name="minMoney" value="€ 10,000.00" />
+		<property name="maxMoney" value="€ 5,000.00" />
 		<property name="ticker" value="OACBD-12349" />
 	</bean>
 
 	<bean id="offer2" class="acme.entities.offers.Offer">
 		<property name="title" value="Sample offer 02" />
 		<property name="moment" value="2019/10/10 19:10" />
-		<property name="deadline" value="2019/11/10 19:10" />
+		<property name="deadline" value="2020/11/10 19:10" />
 		<property name="text" value="The new offer is here!" />
-		<property name="minMoney">
-			<ref bean="money1" />
-		</property>
-		<property name="maxMoney">
-			<ref bean="money2" />
-		</property>
+		<property name="minMoney" value="€ 10,000.00" />
+		<property name="maxMoney" value="€ 5,000.00" />
 		<property name="ticker" value="OACBD-12945" />
 	</bean>
 
@@ -152,13 +194,29 @@
 		<property name="moment" value="2019/10/10 19:10" />
 		<property name="deadline" value="2018/11/10 19:10" />
 		<property name="text" value="The old offer is here!" />
-		<property name="minMoney">
-			<ref bean="money1" />
-		</property>
-		<property name="maxMoney">
-			<ref bean="money2" />
-		</property>
+		<property name="minMoney" value="€ 10,000.00" />
+		<property name="maxMoney" value="€ 5,000.00" />
 		<property name="ticker" value="OACBD-14345" />
+	</bean>
+	
+	<bean id="offer4" class="acme.entities.offers.Offer">
+		<property name="title" value="Sample offer 04" />
+		<property name="moment" value="2019/10/10 19:10" />
+		<property name="deadline" value="2020/11/10 19:10" />
+		<property name="text" value="The old offer is here!" />
+		<property name="minMoney" value="€ 10,000.00" />
+		<property name="maxMoney" value="€ 5,000.00" />
+		<property name="ticker" value="OACBD-02945" />
+	</bean>
+
+	<bean id="offer5" class="acme.entities.offers.Offer">
+		<property name="title" value="Sample offer 05" />
+		<property name="moment" value="2019/10/10 19:10" />
+		<property name="deadline" value="2018/11/10 19:10" />
+		<property name="text" value="The old offer is here!" />
+		<property name="minMoney" value="€ 10,000.00" />
+		<property name="maxMoney" value="€ 5,000.00" />
+		<property name="ticker" value="OACBD-84345" />
 	</bean>
 
 
@@ -259,33 +317,6 @@
 		<property name="sector" value="example 5" />
 		<property name="investingStatment" value="etc.." />
 		<property name="stars" value="5" />
-	</bean>
-
-	<!--Money -->
-
-	<bean id="money1" class="acme.framework.datatypes.Money">
-		<property name="amount" value="400.00" />
-		<property name="currency" value="€" />
-	</bean>
-
-	<bean id="money2" class="acme.framework.datatypes.Money">
-		<property name="amount" value="500.00" />
-		<property name="currency" value="€" />
-	</bean>
-
-	<bean id="money3" class="acme.framework.datatypes.Money">
-		<property name="amount" value="500.00" />
-		<property name="currency" value="€" />
-	</bean>
-
-	<bean id="money4" class="acme.framework.datatypes.Money">
-		<property name="amount" value="250.00" />
-		<property name="currency" value="€" />
-	</bean>
-
-	<bean id="money5" class="acme.framework.datatypes.Money">
-		<property name="amount" value="100.00" />
-		<property name="currency" value="€" />
 	</bean>
 
 	<!-- Employers -->
@@ -459,12 +490,23 @@
 	<bean name="job5" class="acme.entities.jobs.Job">
 		<property name="reference" value="EMP2-JOB5" />
 		<property name="title" value="Title 5" />
-		<property name="deadline" value="2029/12/11 23:59" />
+		<property name="deadline" value="2022/12/11 23:59" />
 		<property name="salary" value="€ 15,000.98" />
 		<property name="moreInfo" value="http://www.example.com" />
 		<property name="finalMode" value="true" />
 		<property name="employer" ref="employer2Employer" />
 		<property name="descriptor" ref="descriptor5" />
+	</bean>
+	
+	<bean name="job6" class="acme.entities.jobs.Job">
+		<property name="reference" value="EMP2-JOB6" />
+		<property name="title" value="Title 6" />
+		<property name="deadline" value="2010/12/11 23:59" />
+		<property name="salary" value="€ 15,000.98" />
+		<property name="moreInfo" value="http://www.example.com" />
+		<property name="finalMode" value="false" />
+		<property name="employer" ref="employer2Employer" />
+		<property name="descriptor" ref="descriptor6" />
 	</bean>
 
 	<!-- Descriptors -->
@@ -491,8 +533,12 @@
 
 	<bean name="descriptor5" class="acme.entities.descriptors.Descriptor">
 		<property name="description" value="Sample description" />
-
 	</bean>
+	
+	<bean name="descriptor6" class="acme.entities.descriptors.Descriptor">
+		<property name="description" value="Sample description" />
+	</bean>
+	
 
 	<!-- Duties -->
 
@@ -534,8 +580,8 @@
 	<bean name="duty6" class="acme.entities.duties.Duty">
 		<property name="title" value="Second duty" />
 		<property name="description" value="Sample description" />
-		<property name="percentage" value="100.0" />
-		<property name="descriptor" ref="descriptor5"/>
+		<property name="percentage" value="99.0" />
+		<property name="descriptor" ref="descriptor6"/>
 	</bean>
 
 	<!-- Applications -->
@@ -584,16 +630,7 @@
 		<property name="job" ref="job4" />
 	</bean>
 
-	<bean name="application5" class="acme.entities.applications.Application">
-		<property name="reference" value="EMP2-JOB5-WORK2" />
-		<property name="moment" value="2000/11/11 23:59" />
-		<property name="status" value="REJECTED" />
-		<property name="statement" value="Statement" />
-		<property name="skills" value="Useful and handful" />
-		<property name="qualifications" value="Good grade in Design and Testing" />
-		<property name="worker" ref="worker2Worker" />
-		<property name="job" ref="job5" />
-	</bean>
+
 
 	<!-- Threads -->
 

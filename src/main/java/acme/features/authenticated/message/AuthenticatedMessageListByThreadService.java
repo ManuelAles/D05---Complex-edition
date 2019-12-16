@@ -27,7 +27,21 @@ public class AuthenticatedMessageListByThreadService implements AbstractListServ
 	public boolean authorise(final Request<Message> request) {
 		assert request != null;
 
-		return true;
+		boolean result = false;
+
+		int threadId;
+		Collection<Message> messages;
+		threadId = request.getModel().getInteger("id");
+		messages = this.repository.findAllByThread(threadId);
+
+		int principalId;
+		principalId = request.getPrincipal().getActiveRoleId();
+
+		for (Message m : messages) {
+			result = this.repository.findThreadsByUserId(principalId).contains(m.getThread());
+		}
+
+		return result;
 	}
 
 	@Override

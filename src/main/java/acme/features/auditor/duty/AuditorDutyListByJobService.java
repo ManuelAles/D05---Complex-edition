@@ -2,6 +2,7 @@
 package acme.features.auditor.duty;
 
 import java.util.Collection;
+import java.util.Date;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -28,7 +29,16 @@ public class AuditorDutyListByJobService implements AbstractListService<Auditor,
 	public boolean authorise(final Request<Duty> request) {
 		assert request != null;
 
-		return true;
+		Boolean result;
+
+		Job job;
+		job = this.repository.findJobById(request.getModel().getInteger("id"));
+
+		Date moment;
+		moment = new Date();
+		result = job.getDeadline().after(moment) && job.isFinalMode();
+
+		return result;
 	}
 
 	@Override

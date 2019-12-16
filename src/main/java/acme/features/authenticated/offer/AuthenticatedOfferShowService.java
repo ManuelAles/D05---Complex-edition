@@ -1,6 +1,8 @@
 
 package acme.features.authenticated.offer;
 
+import java.util.Date;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -25,7 +27,19 @@ public class AuthenticatedOfferShowService implements AbstractShowService<Authen
 	public boolean authorise(final Request<Offer> request) {
 		assert request != null;
 
-		return true;
+		Boolean result;
+
+		Offer a;
+		int id;
+		id = request.getModel().getInteger("id");
+		a = this.repository.findOneById(id);
+
+		Date moment;
+		moment = new Date();
+
+		result = a.getDeadline().after(moment);
+
+		return result;
 	}
 
 	@Override

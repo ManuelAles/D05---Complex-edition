@@ -1,6 +1,8 @@
 
 package acme.features.authenticated.job;
 
+import java.util.Date;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -25,7 +27,19 @@ public class AuthenticatedJobShowService implements AbstractShowService<Authenti
 	public boolean authorise(final Request<Job> request) {
 		assert request != null;
 
-		return true;
+		Boolean result;
+
+		Job job;
+		int id;
+		id = request.getModel().getInteger("id");
+		job = this.repository.findJobById(id);
+
+		Date moment;
+		moment = new Date();
+
+		result = job.getDeadline().after(moment) && job.isFinalMode();
+
+		return result;
 	}
 
 	@Override

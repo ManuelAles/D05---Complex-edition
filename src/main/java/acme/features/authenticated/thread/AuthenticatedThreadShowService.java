@@ -24,7 +24,20 @@ public class AuthenticatedThreadShowService implements AbstractShowService<Authe
 	public boolean authorise(final Request<acme.entities.threads.Thread> request) {
 		assert request != null;
 
-		return true;
+		Boolean result;
+
+		acme.entities.threads.Thread thread;
+		int threadId;
+		threadId = request.getModel().getInteger("id");
+		thread = this.repository.findThreadById(threadId);
+
+		int principalId;
+		principalId = request.getPrincipal().getActiveRoleId();
+
+		result = this.repository.findThreadsByUserId(principalId).contains(thread);
+
+		return result;
+
 	}
 
 	@Override

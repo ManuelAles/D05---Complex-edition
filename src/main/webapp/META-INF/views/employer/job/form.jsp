@@ -3,6 +3,7 @@
 <%@page language="java"%>
 
 <%@taglib prefix="jstl" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@taglib prefix="security" uri="http://www.springframework.org/security/tags"%>
 <%@taglib prefix="acme" tagdir="/WEB-INF/tags"%>
 
 <acme:form readonly="true">
@@ -17,17 +18,27 @@
 
 		
 	<button type="button" formmethod="get" class="btn btn-default" onclick="location.href= 'employer/duty/list_by_job?id=${id}'">
-		<acme:message code="employer.job.form.label.duties" />
+		<acme:message code="employer.job.form.button.duties" />
 	</button>
+	
+	<jstl:if test="${finalMode == false}">
+	<security:authorize access="hasRole('Employer')">	
+	<jstl:set var="jobId" value="${id}"/>
+	<button type="button" formmethod="get" class="btn btn-primary" onclick="location.href= 'employer/duty/create?jobId=${jobId}'">
+		<acme:message code="employer.job.form.button.duty.create" />
+	</button>
+	</security:authorize>
+	</jstl:if>
+	<br>
 	
 		<button type="button" formmethod="get" class="btn btn-default" onclick="location.href= 'employer/audit-record/list_by_job?id=${id}'">
-		<acme:message code="employer.job.form.label.auditRecords" />
+		<acme:message code="employer.job.form.button.auditRecords" />
 	</button>
-	
-	<acme:form-submit test="${command == 'create'}" code="employer.job.button.create" action="/employer/job/create" />
+	<br>	
+
+  <acme:form-submit test="${command == 'create'}" code="employer.job.button.create" action="/employer/job/create" />
 	<acme:form-submit test="${command == 'update'}" code="employer.job.button.update" action="/employer/job/update" />
 	<acme:form-submit test="${command == 'delete'}" code="employer.job.button.delete" action="/employer/job/delete" />
-	
 	<acme:form-return code="employer.job.form.button.return" />
 
 </acme:form>

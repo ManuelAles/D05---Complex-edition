@@ -16,8 +16,13 @@ worker.application.form.label.reference = Referencia:
 worker.application.form.label.moment = Momento:
 worker.application.form.label.status = Estado:
 worker.application.form.label.statement = Declaración:
-worker.application.label.skills = Habilidades:
-worker.application.label.qualifications = Calificaciones:
-worker.application.label.job = Titulo del trabajo: 
+worker.application.form.label.skills = Habilidades:
+worker.application.form.label.qualifications = Calificaciones:
+worker.application.form.label.job = Titulo del trabajo: 
 
+worker.application.form.button.create = Lanzar
 worker.application.form.button.return = Volver
+
+worker.application.error.reference = La referencia no es única
+worker.application.error.spam = La cadena de texto supera el porcentaje de spam
+worker.application.error.unique = Un trabajador no puede solicitar un trabajo que ya ha solicitado

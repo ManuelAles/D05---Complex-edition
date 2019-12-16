@@ -1,3 +1,15 @@
+/*
+ * AuthenticatedEmployerUpdateService.java
+ *
+ * Copyright (c) 2019 Rafael Corchuelo.
+ *
+ * In keeping with the traditional purpose of furthering education and research, it is
+ * the policy of the copyright owner to permit non-commercial use and redistribution of
+ * this software. It has been tested carefully, but it is not guaranteed for any particular
+ * purposes. The copyright owner does not offer any warranties or representations, nor do
+ * they accept any liabilities with respect to them.
+ */
+
 
 package acme.features.authenticated.employer;
 
@@ -18,13 +30,17 @@ import acme.framework.services.AbstractUpdateService;
 @Service
 public class AuthenticatedEmployerUpdateService implements AbstractUpdateService<Authenticated, Employer> {
 
+
 	// Internal state -------------------------------------------------------------------
+
 
 	@Autowired
 	private AuthenticatedEmployerRepository repository;
 
 
-	// AbstractUpdateService<Authenticated, Employer> -----------------------------------
+
+	// AbstractUpdateService<Authenticated, Employer> interface ---------------
+
 
 	@Override
 	public boolean authorise(final Request<Employer> request) {
@@ -40,7 +56,6 @@ public class AuthenticatedEmployerUpdateService implements AbstractUpdateService
 		assert errors != null;
 
 		request.bind(entity, errors);
-
 	}
 
 	@Override
@@ -50,7 +65,6 @@ public class AuthenticatedEmployerUpdateService implements AbstractUpdateService
 		assert model != null;
 
 		request.unbind(entity, model, "company", "sector");
-
 	}
 
 	@Override

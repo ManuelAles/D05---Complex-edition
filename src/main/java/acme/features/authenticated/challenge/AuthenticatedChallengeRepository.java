@@ -16,7 +16,6 @@ public interface AuthenticatedChallengeRepository extends AbstractRepository {
 	Challenge findOneById(int id);
 
 	// Filtrando por los que tengan desde la fecha de creación hasta hoy, menos de un mes de antiguedad
-
 	@Query("select c from Challenge c where c.deadline > current_timestamp")
 	Collection<Challenge> findAllActive();
 }
