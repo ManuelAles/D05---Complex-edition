@@ -26,7 +26,7 @@
 	
 	<security:authorize access="hasRole('Worker')">
 	<jstl:set var="jobId" value="${id}"/>
-	<button type="button" formmethod="get" class="btn btn-default" onclick="location.href= 'worker/application/create?jobId=${jobId}'">
+	<button type="button" formmethod="get" class="btn btn-primary" onclick="location.href= 'worker/application/create?jobId=${jobId}'">
 		<acme:message code="authenticated.job.form.button.application" />
 	</button>
 	</security:authorize>

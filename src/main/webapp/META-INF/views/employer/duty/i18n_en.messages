@@ -11,7 +11,6 @@
 
 employer.duty.list.label.title = Title
 employer.duty.list.label.percentage = Work percentage
-
 employer.duty.list.button.return = Return to job list
 
 employer.duty.form.label.title = Title:
@@ -19,7 +18,8 @@ employer.duty.form.label.description = Description:
 employer.duty.form.label.percentage = Work percentage:
 
 employer.duty.form.button.create = Create
-employer.duty.form.button.return = Return 
-
+employer.duty.form.button.return = Return
+				
+employer.duty.error.higher100 = You cannot add a percentage of work that adds up to a total of 100% with the previous tasks
 employer.duty.error.negative = It can not be a negative number
 employer.duty.error.higher = It can not be a number higher than 100

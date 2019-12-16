@@ -13,6 +13,4 @@
 
 <acme:form-return code="employer.application.list.button.return"/>
 
-<button type="button" formmethod="get" onclick="javascript: redirect('employer/application/show?id=${id}')" class="btn btn-default">
-				<acme:message code="employer.application.list.button.return"/>				
-</button>	
+
