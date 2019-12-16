@@ -25,4 +25,13 @@ employer.job.form.button.duty.create = Create a duty for this job
 employer.job.form.button.duties = Duties list from this job
 employer.job.form.button.auditRecords = Audit records list from this job
 
+employer.job.form.button.update = Update
+employer.job.form.button.create = Create
+employer.job.form.button.delete = Delete
+
+employer.job.deadline.before = The deadline date is before from now!
+employer.job.salary.eur = The monetary unit must be euros (€ or EUR)!
+employer.job.salary.higher = The salary currency have to be higher than zero!
+
+
 employer.job.form.button.return = Return

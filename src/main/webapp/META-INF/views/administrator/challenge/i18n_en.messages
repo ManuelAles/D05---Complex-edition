@@ -19,7 +19,7 @@ administrator.challenge.form.button.create = Create
 administrator.challenge.form.button.delete = Delete
 
 administrator.challenge.deadline.before = The deadline date is before from now!
-administrator.challenge.goldReward.eur = The monetary unit must be euros!
+administrator.challenge.goldReward.eur = The monetary unit must be euros (€ or EUR)!
 administrator.challenge.silverReward.eur = The monetary unit must be euros!
 administrator.challenge.bronzeReward.eur = The monetary unit must be euros!
 administrator.challenge.rewards = The rewards must be equitable, the highest being gold

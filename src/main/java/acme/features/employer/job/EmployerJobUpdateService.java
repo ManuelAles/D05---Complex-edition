@@ -1,9 +1,16 @@
 
 package acme.features.employer.job;
 
+import java.util.Calendar;
+import java.util.Collection;
+import java.util.Date;
+import java.util.GregorianCalendar;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import acme.entities.descriptors.Descriptor;
+import acme.entities.duties.Duty;
 import acme.entities.jobs.Job;
 import acme.entities.roles.Employer;
 import acme.framework.components.Errors;
@@ -44,7 +51,6 @@ public class EmployerJobUpdateService implements AbstractUpdateService<Employer,
 		result = employer.getUserAccount().getId() == principal.getAccountId() && !finalMode;
 
 		return result;
-
 	}
 
 	@Override
@@ -85,6 +91,48 @@ public class EmployerJobUpdateService implements AbstractUpdateService<Employer,
 		assert entity != null;
 		assert errors != null;
 
+		Calendar calendar;
+		Date minimumDeadline;
+
+		// validar deadline
+		if (!errors.hasErrors("deadline")) {
+			calendar = new GregorianCalendar();
+			minimumDeadline = calendar.getTime();
+			Boolean isAfter = entity.getDeadline().after(minimumDeadline);
+			errors.state(request, isAfter, "deadline", "employer.job.deadline.before");
+		}
+		// Validar moneda del salario
+		if (!errors.hasErrors("salary")) {
+			Boolean isEUR = entity.getSalary().getCurrency().equals("€") || entity.getSalary().getCurrency().equals("EUR");
+			errors.state(request, isEUR, "salary", "employer.job.salary.eur");
+		}
+		// Validar salario que negativo, ni 0
+		if (!errors.hasErrors("salary")) {
+			Boolean higher = entity.getSalary().getAmount() > 0.00;
+			errors.state(request, higher, "salary", "employer.job.salary.higher");
+		}
+
+		//Comprueba que el reference es único
+		Boolean notUnique;
+		notUnique = this.repository.findByRefence(entity.getReference()) != null;
+		errors.state(request, notUnique, "reference", "employer.job.error.reference");
+
+		// Un job debe tener un descriptor y el porcentaje de trabajo sumar 100 si va a ser pasado a modo público
+		if (!errors.hasErrors("finalMode")) {
+			Boolean notWorkload, notDescriptor;
+			Double workload = 0.0;
+			Collection<Duty> duties = this.repository.findDutiesByDescriptor(entity.getDescriptor().getId());
+			for (Duty d : duties) {
+				workload += d.getPercentage();
+			}
+			notWorkload = workload.equals(100.00);
+			notDescriptor = entity.getDescriptor() != null;
+			errors.state(request, notDescriptor, "finalMode", "employer.job.error.descriptor");
+			errors.state(request, notWorkload, "finalMode", "employer.job.error.workload");
+		}
+
+		// Detectar que las cadenas no son spam
+
 	}
 
 	@Override
@@ -92,8 +140,16 @@ public class EmployerJobUpdateService implements AbstractUpdateService<Employer,
 		assert request != null;
 		assert entity != null;
 
-		this.repository.save(entity);
+		Descriptor descriptor;
+		descriptor = entity.getDescriptor();
+		String description;
 
+		description = request.getModel().getString("descriptor.description");
+		descriptor.setDescription(description);
+		entity.setDescriptor(descriptor);
+
+		this.repository.save(descriptor);
+		this.repository.save(entity);
 	}
 
 }

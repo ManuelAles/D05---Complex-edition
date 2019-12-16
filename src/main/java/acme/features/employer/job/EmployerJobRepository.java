@@ -33,4 +33,10 @@ public interface EmployerJobRepository extends AbstractRepository {
 	@Query("select count(a) from Application a where a.job.id = ?1")
 	Integer countApplicationsByJob(int id);
 
+	@Query("select j from Job j where j.reference = ?1")
+	Job findByRefence(String reference);
+
+	@Query("select d from Duty d where d.descriptor.id = ?1")
+	Collection<Duty> findDutiesByDescriptor(int id);
+
 }

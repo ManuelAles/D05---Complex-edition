@@ -6,21 +6,47 @@
 <%@taglib prefix="security" uri="http://www.springframework.org/security/tags"%>
 <%@taglib prefix="acme" tagdir="/WEB-INF/tags"%>
 
-<acme:form readonly="true">
+<acme:form>
 
-	<acme:form-textbox code="employer.job.form.label.reference" path="reference" />
+
+	<jstl:if test="${finalMode == false}">
+	<acme:form-textbox code="employer.job.form.label.reference" path="reference" placeholder="EEEE-JJJJ"/>
 	<acme:form-textbox code="employer.job.form.label.title" path="title" />
 	<acme:form-moment code="employer.job.form.label.deadline" path="deadline" />
 	<acme:form-money code="employer.job.form.label.salary" path="salary" />
 	<acme:form-url code="employer.job.form.label.moreInfo" path="moreInfo" />
 	<acme:form-textarea code="employer.job.form.label.description" path="descriptor.description" />
+	<jstl:if test="${command != 'create'}">
 	<acme:form-checkbox code="employer.job.form.label.finalMode" path="finalMode" />
-
+	</jstl:if>
+	</jstl:if>
+	
+	<jstl:if test="${finalMode == true}">
+	<acme:form-textbox code="employer.job.form.label.reference" path="reference" readonly="true" />
+	<acme:form-textbox code="employer.job.form.label.title" path="title" readonly="true"/>
+	<acme:form-moment code="employer.job.form.label.deadline" path="deadline" readonly="true" />
+	<acme:form-money code="employer.job.form.label.salary" path="salary" readonly="true" />
+	<acme:form-url code="employer.job.form.label.moreInfo" path="moreInfo" readonly="true" />
+	<acme:form-textarea code="employer.job.form.label.description" path="descriptor.description" readonly="true" />
+	<acme:form-checkbox code="employer.job.form.label.finalMode" path="finalMode" readonly="true"/>
+	</jstl:if>
+	
 		
+	<acme:form-submit test="${command == 'create'}" code="employer.job.form.button.create" action="/employer/job/create" />
+	<jstl:if test="${command != 'create'}">
+	<acme:form-submit test="${finalMode == false}" code="employer.job.form.button.update" action="/employer/job/update" />
+	</jstl:if>
+	<acme:form-submit test="${command == 'show'}" code="employer.job.form.button.delete" action="/employer/job/delete" />
+	
+	
+	<acme:form-return code="employer.job.form.button.return" />
+	<br>
+		
+	<jstl:if test="${command != 'create'}">	
 	<button type="button" formmethod="get" class="btn btn-default" onclick="location.href= 'employer/duty/list_by_job?id=${id}'">
 		<acme:message code="employer.job.form.button.duties" />
 	</button>
-	
+			
 	<jstl:if test="${finalMode == false}">
 	<security:authorize access="hasRole('Employer')">	
 	<jstl:set var="jobId" value="${id}"/>
@@ -31,14 +57,12 @@
 	</jstl:if>
 	<br>
 	
-		<button type="button" formmethod="get" class="btn btn-default" onclick="location.href= 'employer/audit-record/list_by_job?id=${id}'">
+	<button type="button" formmethod="get" class="btn btn-default" onclick="location.href= 'employer/audit-record/list_by_job?id=${id}'">
 		<acme:message code="employer.job.form.button.auditRecords" />
 	</button>
-	<br>	
+	<br>
+	</jstl:if>	
 
-  <acme:form-submit test="${command == 'create'}" code="employer.job.button.create" action="/employer/job/create" />
-	<acme:form-submit test="${command == 'update'}" code="employer.job.button.update" action="/employer/job/update" />
-	<acme:form-submit test="${command == 'delete'}" code="employer.job.button.delete" action="/employer/job/delete" />
-	<acme:form-return code="employer.job.form.button.return" />
+
 
 </acme:form>
