@@ -9,6 +9,7 @@ import org.springframework.stereotype.Repository;
 import acme.entities.descriptors.Descriptor;
 import acme.entities.duties.Duty;
 import acme.entities.jobs.Job;
+import acme.entities.roles.Employer;
 import acme.framework.repositories.AbstractRepository;
 
 @Repository
@@ -25,5 +26,11 @@ public interface EmployerJobRepository extends AbstractRepository {
 
 	@Query("select j from Job j where j.descriptor = ?1")
 	Job findJobByDuty(Descriptor descriptor);
+
+	@Query("select e from Employer e where e.id = ?1")
+	Employer findEmployerById(int id);
+
+	@Query("select count(a) from Application a where a.job.id = ?1")
+	Integer countApplicationsByJob(int id);
 
 }
