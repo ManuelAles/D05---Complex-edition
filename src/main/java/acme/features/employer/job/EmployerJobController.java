@@ -25,10 +25,13 @@ public class EmployerJobController extends AbstractController<Employer, Job> {
 	@Autowired
 	private EmployerJobShowService		showService;
 
+	@Autowired
 	private EmployerJobCreateService	createService;
 
+	@Autowired
 	private EmployerJobUpdateService	updateService;
 
+	@Autowired
 	private EmployerJobDeleteService	deleteService;
 
 
