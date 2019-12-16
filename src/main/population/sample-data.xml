@@ -462,10 +462,6 @@
 	<bean name="descriptor6" class="acme.entities.descriptors.Descriptor">
 		<property name="description" value="Sample description" />
 	</bean>
-	
-	<bean name="descriptor6" class="acme.entities.descriptors.Descriptor">
-		<property name="description" value="Sample description" />
-	</bean>
 
 	<!-- Duties -->
 
