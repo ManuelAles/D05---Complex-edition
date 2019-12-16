@@ -24,6 +24,10 @@
 		<acme:message code="employer.job.form.label.auditRecords" />
 	</button>
 	
+	<acme:form-submit test="${command == 'create'}" code="employer.job.button.create" action="/employer/job/create" />
+	<acme:form-submit test="${command == 'update'}" code="employer.job.button.update" action="/employer/job/update" />
+	<acme:form-submit test="${command == 'delete'}" code="employer.job.button.delete" action="/employer/job/delete" />
+	
 	<acme:form-return code="employer.job.form.button.return" />
 
 </acme:form>

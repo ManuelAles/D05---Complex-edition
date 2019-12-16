@@ -3,6 +3,7 @@ package acme.features.employer.job;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
+import acme.entities.descriptors.Descriptor;
 import acme.entities.jobs.Job;
 import acme.entities.roles.Employer;
 import acme.framework.components.Errors;
@@ -19,7 +20,7 @@ public class EmployerJobCreateService implements AbstractCreateService<Employer,
 	private EmployerJobRepository repository;
 
 
-	// AbstractShowService<Employer, Job> interface -----
+	// AbstractCreateService<Employer, Job> interface -----
 
 	@Override
 	public boolean authorise(final Request<Job> request) {
@@ -56,13 +57,18 @@ public class EmployerJobCreateService implements AbstractCreateService<Employer,
 		int userAccountId;
 		Employer employer;
 
+		Descriptor descriptor;
+		descriptor = new Descriptor();
+
 		principal = request.getPrincipal();
 		userAccountId = principal.getActiveRoleId();
 		employer = this.repository.findEmployerById(userAccountId);
 
 		result = new Job();
 		result.setEmployer(employer);
-		//poner finalMode?
+
+		result.setDescriptor(descriptor);
+		result.setFinalMode(true);
 
 		return result;
 	}
@@ -73,11 +79,11 @@ public class EmployerJobCreateService implements AbstractCreateService<Employer,
 		assert entity != null;
 		assert errors != null;
 
-		/*
-		 * A job cannot be saved in final mode unless it has a descriptor,
-		 * the duties sum up to 100% the weekly workload, and it’s not considered spam.
-		 */
-
+		// validar EUR
+		// validar deadline
+		// validar salario que no sea null, ni negativo, ni 0
+		// duties A job cannot be saved in final mode unless it has a descriptor,
+		//the duties sum up to 100% the weekly workload, and it’s not considered spam.
 	}
 
 	@Override
@@ -89,15 +95,4 @@ public class EmployerJobCreateService implements AbstractCreateService<Employer,
 
 	}
 
-	/*
-	 * @Override
-	 * public void onSuccess(final Request<Job> request, final Response<Job> response) {
-	 * assert request != null;
-	 * assert response != null;
-	 *
-	 * if (request.isMethod(HttpMethod.POST)) {
-	 * PrincipalHelper.handleUpdate();
-	 * }
-	 * }
-	 */
 }

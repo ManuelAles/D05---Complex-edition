@@ -30,4 +30,7 @@ public interface EmployerJobRepository extends AbstractRepository {
 	@Query("select e from Employer e where e.id = ?1")
 	Employer findEmployerById(int id);
 
+	@Query("select count(a) from Application a where a.job.id = ?1")
+	Integer countApplicationsByJob(int id);
+
 }
