@@ -15,21 +15,19 @@
 	<acme:form-url code="authenticated.job.form.label.moreInfo" path="moreInfo"/>
 	<acme:form-textarea code="authenticated.job.form.label.description" path="descriptor.description"/>
 	
-		<button type="button" formmethod="get" class="btn btn-default" onclick="location.href= 'authenticated/duty/list_by_job?id=${id}'">
-		<acme:message code="authenticated.job.form.button.duties" />
-	</button>
+	<acme:form-return code="authenticated.job.form.button.return"/>
+	<br>
 	
+	<acme:form-submit method="get" code="authenticated.job.form.button.duties" action="/authenticated/duty/list_by_job?id=${id}"/>
+	
+	<acme:form-submit method="get" code="authenticated.job.form.button.auditRecords" action="/authenticated/audit-record/list_by_job?id=${id}"/>
 
-	<button type="button" formmethod="get" class="btn btn-default" onclick="location.href= 'authenticated/audit-record/list_by_job?id=${id}'">
-		<acme:message code="authenticated.job.form.button.auditRecords" />
-	</button>
 	
 	<security:authorize access="hasRole('Worker')">
+	<br>
 	<jstl:set var="jobId" value="${id}"/>
-	<button type="button" formmethod="get" class="btn btn-default" onclick="location.href= 'worker/application/create?jobId=${jobId}'">
-		<acme:message code="authenticated.job.form.button.application" />
-	</button>
+	<acme:form-submit method="get" code="authenticated.job.form.button.application" action="/worker/application/create?jobId=${jobId}"/>
 	</security:authorize>
 	
-	<acme:form-return code="authenticated.job.form.button.return"/>
+	
 </acme:form>

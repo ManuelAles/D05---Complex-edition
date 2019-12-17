@@ -604,7 +604,7 @@ m2=1..n
 + reference: String{NotBlank, Lenght(min=5, max=10)} 
 + title: String{NotBlank} 
 + deadline: Date {Temporal(TIMESTAMP)}
-+ salary: Money
++ salary: Money 
 + moreInfo: String{URL}
 + finalMode: boolean
 </panel_attributes>

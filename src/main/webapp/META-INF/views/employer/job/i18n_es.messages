@@ -21,7 +21,17 @@ employer.job.form.label.description = Descripción:
 employer.job.form.label.finalMode = Publicado
 
 employer.job.form.button.duty.create = Crear una tarea para este trabajo
-employer.job.form.label.duties = Lista de tareas de este trabajo
-employer.job.form.label.auditRecords =  Lista de registros de auditoria de este trabajo
+employer.job.form.button.duties = Lista de tareas de este trabajo
+employer.job.form.button.auditRecords =  Lista de registros de auditoria de este trabajo
+
+employer.job.form.button.update = Actualizar
+employer.job.form.button.create = Crear
+employer.job.form.button.delete = Borrar
+
+employer.job.error.reference = La referencia no es única
+employer.job.deadline.before = ¡La fecha final es anterior a la fecha actual!
+employer.job.salary.eur = ¡La unidad monetaria deben ser euros (€ o EUR)!
+employer.job.salary.higher = ¡La cantidad salarial no puede ser cero!
+employer.job.error.spam = La cadena de texto supera el porcentaje de spam
 
 employer.job.form.button.return = Volver

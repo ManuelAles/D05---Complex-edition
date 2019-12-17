@@ -11,4 +11,4 @@
 </acme:list>
 
 
-<acme:form-return code="employer.duty.list.button.return.list" />
+<acme:form-return code="employer.duty.list.button.return" />
