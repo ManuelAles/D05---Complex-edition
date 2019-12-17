@@ -110,16 +110,22 @@ public class EmployerJobCreateService implements AbstractCreateService<Employer,
 
 		// Detectar que las cadenas no son spam
 
+		if (!errors.hasErrors("reference")) {
+			Boolean spam0;
+			spam0 = this.esSpam(entity.getReference());
+			errors.state(request, !spam0, "reference", "employer.job.error.spam");
+		}
+
 		if (!errors.hasErrors("title")) {
 			Boolean spam1;
 			spam1 = this.esSpam(entity.getTitle());
-			errors.state(request, spam1, "title", "employer.job.error.spam");
+			errors.state(request, !spam1, "title", "employer.job.error.spam");
 		}
 
 		if (!errors.hasErrors("descriptor.description")) {
 			Boolean spam2;
-			spam2 = this.esSpam(entity.getDescriptor().getDescription());
-			errors.state(request, spam2, "descriptor.description", "employer.job.error.spam");
+			spam2 = this.esSpam(request.getModel().getString("descriptor.description"));
+			errors.state(request, !spam2, "descriptor.description", "employer.job.error.spam");
 		}
 
 	}

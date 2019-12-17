@@ -587,7 +587,7 @@
 	<!-- Applications -->
 
 	<bean name="application1" class="acme.entities.applications.Application">
-		<property name="reference" value="EMP1-JOB1-WORK1" />
+		<property name="reference" value="EMP1-JOB1:WORK1" />
 		<property name="moment" value="2000/12/11 23:59" />
 		<property name="status" value="PENDING" />
 		<property name="statement" value="Statement" />
@@ -598,7 +598,7 @@
 	</bean>
 
 	<bean name="application2" class="acme.entities.applications.Application">
-		<property name="reference" value="EMP1-JOB2-WORK1" />
+		<property name="reference" value="EMP1-JOB2:WORK1" />
 		<property name="moment" value="2000/12/11 23:59" />
 		<property name="status" value="ACCEPTED" />
 		<property name="statement" value="Statement" />
@@ -609,7 +609,7 @@
 	</bean>
 
 	<bean name="application3" class="acme.entities.applications.Application">
-		<property name="reference" value="EMP1-JOB3-WORK1" />
+		<property name="reference" value="EMP1-JOB3:WORK1" />
 		<property name="moment" value="2000/12/11 23:59" />
 		<property name="status" value="ACCEPTED" />
 		<property name="statement" value="Statement" />
@@ -620,7 +620,7 @@
 	</bean>
 
 	<bean name="application4" class="acme.entities.applications.Application">
-		<property name="reference" value="EMP1-JOB4-WORK1" />
+		<property name="reference" value="EMP1-JOB4:WORK1" />
 		<property name="moment" value="2000/11/11 23:59" />
 		<property name="status" value="REJECTED" />
 		<property name="statement" value="Statement" />

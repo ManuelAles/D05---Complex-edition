@@ -29,9 +29,11 @@ employer.job.form.button.update = Update
 employer.job.form.button.create = Create
 employer.job.form.button.delete = Delete
 
+employer.job.error.reference = The reference is not unique
 employer.job.deadline.before = The deadline date is before from now!
 employer.job.salary.eur = The monetary unit must be euros (€ or EUR)!
 employer.job.salary.higher = The salary currency have to be higher than zero!
+employer.job.error.spam = The text string exceeds the spam percentage
 
 
 employer.job.form.button.return = Return

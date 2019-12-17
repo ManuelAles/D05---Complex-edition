@@ -115,9 +115,9 @@ public class EmployerJobUpdateService implements AbstractUpdateService<Employer,
 		}
 
 		//Comprueba que el reference es único
-		Boolean notUnique;
+		Boolean notUnique = null;
 		notUnique = this.repository.findByRefence(entity.getReference()) != null;
-		errors.state(request, notUnique, "reference", "employer.job.error.reference");
+		errors.state(request, !notUnique, "reference", "employer.job.error.reference");
 
 		// Un job debe tener un descriptor y el porcentaje de trabajo sumar 100 si va a ser pasado a modo público
 		if (!errors.hasErrors("finalMode")) {
@@ -140,13 +140,13 @@ public class EmployerJobUpdateService implements AbstractUpdateService<Employer,
 		if (!errors.hasErrors("title")) {
 			Boolean spam1;
 			spam1 = this.esSpam(entity.getTitle());
-			errors.state(request, spam1, "title", "employer.job.error.spam");
+			errors.state(request, !spam1, "title", "employer.job.error.spam");
 		}
 
 		if (!errors.hasErrors("descriptor.description")) {
 			Boolean spam2;
 			spam2 = this.esSpam(entity.getDescriptor().getDescription());
-			errors.state(request, spam2, "descriptor.description", "employer.job.error.spam");
+			errors.state(request, !spam2, "descriptor.description", "employer.job.error.spam");
 		}
 
 	}

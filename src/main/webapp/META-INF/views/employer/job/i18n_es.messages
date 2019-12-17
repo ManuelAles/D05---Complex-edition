@@ -28,8 +28,10 @@ employer.job.form.button.update = Actualizar
 employer.job.form.button.create = Crear
 employer.job.form.button.delete = Borrar
 
+employer.job.error.reference = La referencia no es única
 employer.job.deadline.before = ¡La fecha final es anterior a la fecha actual!
 employer.job.salary.eur = ¡La unidad monetaria deben ser euros (€ o EUR)!
 employer.job.salary.higher = ¡La cantidad salarial no puede ser cero!
+employer.job.error.spam = La cadena de texto supera el porcentaje de spam
 
 employer.job.form.button.return = Volver

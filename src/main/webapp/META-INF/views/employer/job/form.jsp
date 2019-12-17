@@ -9,7 +9,7 @@
 <acme:form>
 
 
-	<jstl:if test="${finalMode == false}">
+	<jstl:if test="${finalMode != true}">
 	<acme:form-textbox code="employer.job.form.label.reference" path="reference" placeholder="EEEE-JJJJ"/>
 	<acme:form-textbox code="employer.job.form.label.title" path="title" />
 	<acme:form-moment code="employer.job.form.label.deadline" path="deadline" />
@@ -20,6 +20,7 @@
 	<acme:form-checkbox code="employer.job.form.label.finalMode" path="finalMode" />
 	</jstl:if>
 	</jstl:if>
+	
 	
 	<jstl:if test="${finalMode == true}">
 	<acme:form-textbox code="employer.job.form.label.reference" path="reference" readonly="true" />
@@ -40,28 +41,19 @@
 	
 	
 	<acme:form-return code="employer.job.form.button.return" />
-	<br>
+	<br>		
 		
-	<jstl:if test="${command != 'create'}">	
-	<button type="button" formmethod="get" class="btn btn-default" onclick="location.href= 'employer/duty/list_by_job?id=${id}'">
-		<acme:message code="employer.job.form.button.duties" />
-	</button>
+	<acme:form-submit test="${command != 'create'}" method="get" code="employer.job.form.button.duties" action="/employer/duty/list_by_job?id=${id}"/>
 			
 	<jstl:if test="${finalMode == false}">
-	<security:authorize access="hasRole('Employer')">	
 	<jstl:set var="jobId" value="${id}"/>
-	<button type="button" formmethod="get" class="btn btn-primary" onclick="location.href= 'employer/duty/create?jobId=${jobId}'">
-		<acme:message code="employer.job.form.button.duty.create" />
-	</button>
-	</security:authorize>
+	<acme:form-submit test="${command != 'create'}" method="get" code="employer.job.form.button.duty.create" action="/employer/duty/create?jobId=${jobId}"/>
 	</jstl:if>
 	<br>
 	
-	<button type="button" formmethod="get" class="btn btn-default" onclick="location.href= 'employer/audit-record/list_by_job?id=${id}'">
-		<acme:message code="employer.job.form.button.auditRecords" />
-	</button>
+	<acme:form-submit test="${command != 'create'}" method="get" code="employer.job.form.button.auditRecords" action="/employer/audit-record/list_by_job?id=${id}"/>
 	<br>
-	</jstl:if>	
+	
 
 
 

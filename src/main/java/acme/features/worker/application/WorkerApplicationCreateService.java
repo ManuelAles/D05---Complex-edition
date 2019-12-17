@@ -190,7 +190,6 @@ public class WorkerApplicationCreateService implements AbstractCreateService<Wor
 		}
 
 		return esSpam;
-
 	}
 
 }
