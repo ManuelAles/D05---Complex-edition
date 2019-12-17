@@ -638,6 +638,20 @@
 		<property name="job" ref="job4" />
 		<property name="rejectedDecision" value="I don't like this application" />		
 	</bean>
+	
+	<bean name="application5" class="acme.entities.applications.Application">
+		<property name="reference" value="EMP1-JOB5:WORK2" />
+		<property name="moment" value="2000/12/11 23:59" />
+		<property name="status" value="PENDING" />
+		<property name="statement" value="Statement" />
+		<property name="skills" value="Useful and handful" />
+		<property name="qualifications" value="Good grade in Design and Testing" />
+		<property name="worker" ref="worker2Worker" />
+		<property name="job" ref="job5" />
+		<property name="rejectedDecision">
+			<null />
+		</property>
+	</bean>
 
 
 

@@ -13,10 +13,11 @@
 		<acme:form-moment code="worker.application.form.label.moment" path="moment" readonly="true" />
 		<acme:form-textbox code="worker.application.form.label.status" path="status" readonly="true" />
 		<acme:form-textbox code="worker.application.form.label.job" path="job.title" readonly="true" />
-		<acme:form-textbox code="worker.application.form.label.skills" path="skills" readonly="true"/>
-		<acme:form-textbox code="worker.application.form.label.qualifications" path="qualifications" readonly="true"/>
+			<acme:form-textarea code="worker.application.form.label.rejectDecision" path="rejectedDecision" readonly="true"/>
 	</jstl:if>
-	
+
+	<acme:form-textbox code="worker.application.form.label.skills" path="skills" />
+	<acme:form-textbox code="worker.application.form.label.qualifications" path="qualifications" />
 	<acme:form-textarea code="worker.application.form.label.statement" path="statement" />
 
 

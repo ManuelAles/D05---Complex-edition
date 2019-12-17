@@ -11,8 +11,7 @@
 	<acme:form-moment code="employer.application.form.label.moment" path="moment" readonly="true" />
 
 	<jstl:choose>
-		<jstl:when
-			test="${status == 'PENDING'}">
+		<jstl:when test="${status == 'PENDING' || (status == 'REJECTED' && rejectedDecision == '')}">
 			<acme:form-select code="employer.application.form.label.status" path="status">
 				<acme:form-option code="employer.application.form.label.status.pending" value="PENDING" />
 				<acme:form-option code="employer.application.form.label.status.accepted" value="ACCEPTED" />
@@ -20,9 +19,9 @@
 			</acme:form-select>
 			<acme:form-textarea code="employer.application.form.label.rejectDecision" path="rejectedDecision" />
 		</jstl:when>
-		<jstl:when test="${status == 'REJECTED'}">
+		<jstl:when test="${status == 'REJECTED' && rejectedDecision != ''}">
 			<acme:form-textbox code="employer.application.form.label.status" path="status" readonly="true" />
-			<acme:form-textarea code="employer.application.form.label.rejectDecision" path="rejectedDecision" readonly="true" />
+			<acme:form-textarea code="employer.application.form.label.rejectDecision" path="rejectedDecision" readonly="true"/>
 		</jstl:when>
 		<jstl:otherwise>
 			<acme:form-textbox code="employer.application.form.label.status" path="status" readonly="true" />

@@ -11,6 +11,7 @@
 worker.application.list.label.reference = Reference
 worker.application.list.label.moment = Moment
 worker.application.list.label.status = Status
+worker.application.list.label.job = Job title
 
 worker.application.form.label.reference = Reference:
 worker.application.form.label.moment = Moment:
@@ -19,6 +20,7 @@ worker.application.form.label.statement = Statement:
 worker.application.form.label.skills = Skills:
 worker.application.form.label.qualifications = Qualifications:
 worker.application.form.label.job = Job title:
+worker.application.form.label.rejectDecision = Reject decision:
 
 worker.application.form.button.create = Submit
 worker.application.form.button.return = Return

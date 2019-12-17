@@ -1,7 +1,8 @@
 
 package acme.features.anonymous.announcement;
 
-import java.util.Date;
+import java.util.Calendar;
+import java.util.GregorianCalendar;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -34,11 +35,10 @@ public class AnonymousAnnouncementShowService implements AbstractShowService<Ano
 		id = request.getModel().getInteger("id");
 		a = this.repository.findOneById(id);
 
-		Date moment;
-		moment = new Date();
-		moment.setMonth(moment.getMonth() - 1);
+		Calendar calendar = new GregorianCalendar();
+		long diff = (calendar.getTime().getTime() - a.getMoment().getTime()) / 1000 / 60 / 60 / 24;
 
-		result = a.getMoment().after(moment);
+		result = diff < 30;
 
 		return result;
 	}

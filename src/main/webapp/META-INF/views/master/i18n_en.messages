@@ -33,7 +33,7 @@ master.menu.anonymous.favourite-link0 = Manuel's link
 master.menu.anonymous.favourite-link = Guillermo's link
 master.menu.anonymous.company-record.list = Company Records List
 master.menu.anonymous.investor-record.list = Investor Records List
-master.menu.anonymous.announcement.list = List announcements
+master.menu.anonymous.announcement.list = Newest announcements
 master.menu.authenticated.job.list = Active jobs
 master.menu.authenticated.thread.list = Involved threads list
 
@@ -41,7 +41,7 @@ master.menu.authenticated.thread.list = Involved threads list
 
 master.menu.authenticated = Authenticated
 master.menu.authenticated.reporting = Authenticated
-master.menu.authenticated.announcement.list = List announcements
+master.menu.authenticated.announcement.list = Newest announcements
 master.menu.authenticated.request.list = Active requests
 master.menu.authenticated.offer.list = Active offers
 master.menu.authenticated.company-record.list = Company Records List

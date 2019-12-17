@@ -8,5 +8,6 @@
 <acme:list>
 	<acme:list-column code="worker.application.list.label.reference" path="reference" width="20%"/>
 	<acme:list-column code="worker.application.list.label.moment" path="moment" width="20%"/>
-	<acme:list-column code="worker.application.list.label.status" path="status" width="60%"/>
+	<acme:list-column code="worker.application.list.label.status" path="status" width="20%"/>
+	<acme:list-column code="worker.application.list.label.job" path="job.title" width="40%"/>
 </acme:list>

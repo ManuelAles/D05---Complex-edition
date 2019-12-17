@@ -34,13 +34,13 @@ master.menu.anonymous.favourite-link0 = Enlace de Manuel
 master.menu.anonymous.favourite-link = Enlace de Guillermo
 master.menu.anonymous.company-record.list = Lista de Registros de Compañías
 master.menu.anonymous.investor-record.list = Lista de Registros de Inversiones
-master.menu.anonymous.announcement.list = Listar anuncios
+master.menu.anonymous.announcement.list = Anuncios más nuevos
 
 # master.menu.authenticated ########################################################
 
 master.menu.authenticated = Autenticado
 master.menu.authenticated.reporting = Autenticado
-master.menu.authenticated.announcement.list = Listar anuncios
+master.menu.authenticated.announcement.list = Anuncios más nuevos
 master.menu.authenticated.request.list = Peticiones activas
 master.menu.authenticated.offer.list = Ofertas activas
 master.menu.authenticated.company-record.list = Lista de Registros de Compañías
