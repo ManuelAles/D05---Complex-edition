@@ -70,7 +70,7 @@ public class EmployerApplicationUpdateService implements AbstractUpdateService<E
 		assert entity != null;
 		assert model != null;
 
-		request.unbind(entity, model, "status");
+		request.unbind(entity, model, "status", "rejectedDecision");
 
 	}
 
@@ -95,6 +95,12 @@ public class EmployerApplicationUpdateService implements AbstractUpdateService<E
 
 		Boolean isCorrect = entity.getStatus().equals("ACCEPTED") || entity.getStatus().equals("REJECTED") || entity.getStatus().equals("PENDING");
 		errors.state(request, isCorrect, "status", "employer.application.status");
+
+		Boolean decision;
+		if (!errors.hasErrors("finalMode") && entity.getStatus().equals("REJECTED")) {
+			decision = entity.getRejectedDecision() == null || entity.getRejectedDecision().isEmpty();
+			errors.state(request, !decision, "rejectedDecision", "employer.application.decision");
+		}
 	}
 
 	@Override

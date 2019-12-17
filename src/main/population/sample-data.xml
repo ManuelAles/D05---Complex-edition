@@ -594,6 +594,9 @@
 		<property name="qualifications" value="Good grade in Design and Testing" />
 		<property name="worker" ref="worker1Worker" />
 		<property name="job" ref="job1" />
+		<property name="rejectedDecision">
+			<null />
+		</property>
 	</bean>
 
 	<bean name="application2" class="acme.entities.applications.Application">
@@ -603,8 +606,11 @@
 		<property name="statement" value="Statement" />
 		<property name="skills" value="Useful and handful" />
 		<property name="qualifications" value="Good grade in Design and Testing" />
-		<property name="worker" ref="worker1Worker" />
+		<property name="worker" ref="worker1Worker" />		
 		<property name="job" ref="job2" />
+		<property name="rejectedDecision">
+			<null />
+		</property>
 	</bean>
 
 	<bean name="application3" class="acme.entities.applications.Application">
@@ -616,6 +622,9 @@
 		<property name="qualifications" value="Good grade in Design and Testing" />
 		<property name="worker" ref="worker1Worker" />
 		<property name="job" ref="job3" />
+		<property name="rejectedDecision">
+			<null />
+		</property>
 	</bean>
 
 	<bean name="application4" class="acme.entities.applications.Application">
@@ -627,6 +636,7 @@
 		<property name="qualifications" value="Good grade in Design and Testing" />
 		<property name="worker" ref="worker1Worker" />
 		<property name="job" ref="job4" />
+		<property name="rejectedDecision" value="I don't like this application" />		
 	</bean>
 
 

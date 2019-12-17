@@ -701,9 +701,9 @@ m2=0..n
     <id>UMLClass</id>
     <coordinates>
       <x>0</x>
-      <y>96</y>
+      <y>80</y>
       <w>176</w>
-      <h>88</h>
+      <h>104</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Enum&gt;&gt;
 CustomCommand
@@ -712,6 +712,7 @@ CustomCommand
 + LIST_BY_JOB
 + LIST_BY_THREAD
 + LIST_NOT_MINE
++ PUBLISH
 
 bg=yellow</panel_attributes>
     <additional_attributes/>

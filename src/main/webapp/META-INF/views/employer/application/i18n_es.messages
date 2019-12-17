@@ -19,4 +19,11 @@ employer.application.form.label.worker = Trabajador que solicitó:
 employer.application.form.button.return = Volver
 employer.application.form.button.update = Actualizar
 
+employer.application.form.label.status.pending = Pendiente
+employer.application.form.label.status.accepted = Aceptada
+employer.application.form.label.status.rejected = Rechazada
+
+employer.application.form.label.rejectDecision = Decisión de rechazo
+
 employer.application.status = El estatus debe ser ACEPTADO, RECHAZADO o PENDING
+employer.application.decision = Para rechazar una solicitud debes incluir una decisión
