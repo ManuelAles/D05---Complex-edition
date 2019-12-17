@@ -17,3 +17,6 @@ employer.application.form.label.qualifications =  Calificaciones:
 employer.application.form.label.worker = Trabajador que solicitó:
 
 employer.application.form.button.return = Volver
+employer.application.form.button.update = Actualizar
+
+employer.application.status = El estatus debe ser ACEPTADO, RECHAZADO o PENDING

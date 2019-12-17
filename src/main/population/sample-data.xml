@@ -539,7 +539,6 @@
 		<property name="description" value="Sample description" />
 	</bean>
 	
-
 	<!-- Duties -->
 
 	<bean name="duty1" class="acme.entities.duties.Duty">

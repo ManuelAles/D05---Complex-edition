@@ -24,3 +24,6 @@ employer.application.form.label.qualifications =  Qualifications:
 employer.application.form.label.worker = Worker who requested:
 
 employer.application.form.button.return = Return
+employer.application.form.button.update = Update
+
+employer.application.status = Status must be ACCEPTED, REJECTED or PENDING
