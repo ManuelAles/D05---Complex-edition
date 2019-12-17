@@ -30,3 +30,5 @@ consumer.offer.error.minMoney = El dinero minímo debe ser menor que el dinero m
 consumer.offer.error.currency = La moneda debe ser  € o EUR
 
 consumer.offer.form.button.return = Volver
+
+consumer.offer.error.spam = La cadena de texto supera el porcentaje de spam

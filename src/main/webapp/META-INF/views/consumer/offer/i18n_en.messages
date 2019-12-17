@@ -29,3 +29,5 @@ consumer.offer.error.minMoney = The minMoney has to be lower than the maxMoney
 consumer.offer.error.currency = The currency must be € or EUR
 
 consumer.offer.form.button.return = Return
+
+consumer.offer.error.spam = The text string exceeds the spam percentage

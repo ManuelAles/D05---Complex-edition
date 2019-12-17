@@ -23,3 +23,4 @@ employer.duty.form.button.return = Return
 employer.duty.error.higher100 = You cannot add a percentage of work that adds up to a total of 100% with the previous tasks
 employer.duty.error.negative = It can not be a negative number
 employer.duty.error.higher = It can not be a number higher than 100
+employer.duty.error.spam = The text string exceeds the spam percentage

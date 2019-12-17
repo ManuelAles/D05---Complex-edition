@@ -70,12 +70,11 @@ public class AdministratorAnnouncementUpdateService implements AbstractUpdateSer
 		assert entity != null;
 		assert errors != null;
 
-		Boolean spamR, spamT = null;
-		spamR = this.esSpam(entity.getTitle());
-		spamT = this.esSpam(entity.getText());
-
-		errors.state(request, !spamR, "title", "administrator.announcement.error.spam");
-		errors.state(request, !spamT, "text", "administrator.announcement.error.spam");
+		Boolean spam1, spam2 = null;
+		spam1 = this.esSpam(entity.getTitle());
+		spam2 = this.esSpam(entity.getText());
+		errors.state(request, !spam1, "title", "administrator.announcement.error.spam");
+		errors.state(request, !spam2, "text", "administrator.announcement.error.spam");
 	}
 
 	@Override

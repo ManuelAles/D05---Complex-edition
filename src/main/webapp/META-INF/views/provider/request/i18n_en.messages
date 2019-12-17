@@ -26,3 +26,5 @@ provider.request.error.ticker = The ticker must be unique
 provider.request.error.currency = The currency must be € or EUR
 
 provider.request.form.button.return = Return
+
+provider.request.error.spam = The text string exceeds the spam percentage

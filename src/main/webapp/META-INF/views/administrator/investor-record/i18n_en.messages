@@ -21,3 +21,5 @@ administrator.investor-record.button.return = Return
 administrator.investor-record.form.button.create = Create
 administrator.investor-record.form.button.update = Update
 administrator.investor-record.form.button.delete = Delete
+
+administrator.investor-record.error.spam = The text string exceeds the spam percentage

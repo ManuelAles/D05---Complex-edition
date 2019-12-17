@@ -26,3 +26,5 @@ administrator.company-record.button.return = Return
 administrator.company-record.form.button.create = Create
 administrator.company-record.form.button.update = Update
 administrator.company-record.form.button.delete = Delete
+
+administrator.company-record.error.spam = The text string exceeds the spam percentage

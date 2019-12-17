@@ -27,3 +27,5 @@ provider.request.error.ticker = El ticker debe de ser unico
 provider.request.error.currency = La moneda debe ser  € o EUR
 
 provider.request.form.button.return = Volver
+
+provider.request.error.spam = La cadena de texto supera el porcentaje de spam

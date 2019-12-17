@@ -23,3 +23,4 @@ employer.duty.form.button.return = Volver
 employer.duty.error.higher100 = No puedes sumar un porcentaje de trabajo que sume con las tareas anteriores un porcentaje total mayor del 100%
 employer.duty.error.negative = No puede ser un número negativo
 employer.duty.error.higher = No puede ser un número mayor de 100
+employer.duty.error.spam = La cadena de texto supera el porcentaje de spam

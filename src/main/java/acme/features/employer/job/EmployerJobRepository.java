@@ -47,4 +47,7 @@ public interface EmployerJobRepository extends AbstractRepository {
 	@Query("select c from Configuration c")
 	Configuration selectConfiguration();
 
+	@Query("select j from Job j")
+	Collection<Job> findAllJobs();
+
 }

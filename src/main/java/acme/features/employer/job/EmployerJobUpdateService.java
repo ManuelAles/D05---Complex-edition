@@ -115,13 +115,19 @@ public class EmployerJobUpdateService implements AbstractUpdateService<Employer,
 		}
 
 		//Comprueba que el reference es único
-		Boolean notUnique = null;
-		notUnique = this.repository.findByRefence(entity.getReference()) != null;
-		errors.state(request, !notUnique, "reference", "employer.job.error.reference");
+		Boolean notUnique = true;
+		Collection<Job> all = this.repository.findAllJobs();
+		for (Job j : all) {
+			if (!entity.equals(j) && entity.getReference().equals(j.getReference())) {
+				notUnique = false;
+			}
+		}
+
+		errors.state(request, notUnique, "reference", "employer.job.error.reference");
 
 		// Un job debe tener un descriptor y el porcentaje de trabajo sumar 100 si va a ser pasado a modo público
-		if (!errors.hasErrors("finalMode")) {
-			if (request.getModel().getBoolean("finalMode") == true) {
+		if (request.getModel().getBoolean("finalMode") == true) {
+			if (!errors.hasErrors("finalMode")) {
 				Boolean notWorkload, notDescriptor;
 				Double workload = 0.0;
 				Collection<Duty> duties = this.repository.findDutiesByDescriptor(entity.getDescriptor().getId());

@@ -109,14 +109,15 @@ public class WorkerApplicationCreateService implements AbstractCreateService<Wor
 		Boolean notUnique = null;
 		notUnique = this.repository.findByRefence(entity.getReference()) != null;
 
-		//Comprueba que las cadenas no tienen spam
-		Boolean spamR, spamT = null;
-		spamR = this.esSpam(entity.getReference());
-		spamT = this.esSpam(entity.getStatement());
-
 		errors.state(request, !notUnique, "reference", "worker.application.error.reference");
-		errors.state(request, !spamR, "reference", "worker.application.error.spam");
-		errors.state(request, !spamT, "statement", "worker.application.error.spam");
+
+		//Comprueba que las cadenas no tienen spam
+		Boolean spam1, spam2 = null;
+		spam1 = this.esSpam(entity.getReference());
+		spam2 = this.esSpam(entity.getStatement());
+
+		errors.state(request, !spam1, "reference", "worker.application.error.spam");
+		errors.state(request, !spam2, "statement", "worker.application.error.spam");
 
 	}
 

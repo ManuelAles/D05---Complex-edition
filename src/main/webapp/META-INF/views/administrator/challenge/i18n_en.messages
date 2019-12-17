@@ -23,3 +23,5 @@ administrator.challenge.goldReward.eur = The monetary unit must be euros (€ or
 administrator.challenge.silverReward.eur = The monetary unit must be euros!
 administrator.challenge.bronzeReward.eur = The monetary unit must be euros!
 administrator.challenge.rewards = The rewards must be equitable, the highest being gold
+
+administrator.challenge.error.spam = The text string exceeds the spam percentage

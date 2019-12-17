@@ -18,3 +18,5 @@ authenticated.worker.form.label.skills = Habilidades:
 authenticated.worker.form.button.create = Registrar
 authenticated.worker.form.button.update = Actualizar
 authenticated.worker.form.button.return = Volver
+
+authenticated.worker.error.spam = La cadena de texto supera el porcentaje de spam

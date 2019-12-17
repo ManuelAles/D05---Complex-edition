@@ -12,3 +12,5 @@ administrator.announcement.form.button.return = Return
 administrator.announcement.form.button.update = Update
 administrator.announcement.form.button.create = Create
 administrator.announcement.form.button.delete = Delete
+
+administrator.announcemnet.error.spam = The text string exceeds the spam percentage

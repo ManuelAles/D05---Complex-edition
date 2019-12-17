@@ -4,6 +4,7 @@ package acme.features.consumer.offer;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
+import acme.entities.configurations.Configuration;
 import acme.entities.offers.Offer;
 import acme.framework.repositories.AbstractRepository;
 
@@ -12,4 +13,7 @@ public interface ConsumerOfferRepository extends AbstractRepository {
 
 	@Query("select o from Offer o where o.ticker = ?1")
 	Offer findByTicker(String ticker);
+
+	@Query("select c from Configuration c")
+	Configuration selectConfiguration();
 }

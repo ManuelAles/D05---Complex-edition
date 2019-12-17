@@ -23,3 +23,5 @@ administrator.challenge.goldReward.eur = ¡La unidad monetaria deben ser euros (
 administrator.challenge.silverReward.eur = ¡La unidad monetaria deben ser euros!
 administrator.challenge.bronzeReward.eur = ¡La unidad monetaria deben ser euros!
 administrator.challenge.rewards = Las recompensas deben ser equitativas siendo la mayor la de oro
+
+administrator.challenge.error.spam = La cadena de texto supera el porcentaje de spam
