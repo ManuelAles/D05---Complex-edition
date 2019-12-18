@@ -45,7 +45,20 @@ public class AuthenticatedEmployerCreateService implements AbstractCreateService
 	public boolean authorise(final Request<Employer> request) {
 		assert request != null;
 
-		return true;
+		Employer employer;
+		Principal principal;
+		int userAccountId;
+
+		principal = request.getPrincipal();
+		userAccountId = principal.getAccountId();
+		employer = this.repository.findOneEmployerByUserAccountId(userAccountId);
+
+		if (employer == null) {
+			return true;
+		} else {
+			return false;
+		}
+
 	}
 
 	@Override
@@ -151,12 +164,9 @@ public class AuthenticatedEmployerCreateService implements AbstractCreateService
 			StringTokenizer stringTokenizer = new StringTokenizer(s2);
 			Integer ss = stringTokenizer.countTokens();
 			//Si la cadena contiene ese elemento añadimos +2 al contador de spam
-			if (cadena.contains(s2) && ss == 2) {
-				palabrasSpam += 2;
-			} else if (cadena.contains(s2) && ss == 3) {
-				palabrasSpam += 3;
-			} else if (cadena.contains(s2) && ss == 4) {
-				palabrasSpam += 4;
+			if (cadena.contains(s2)) {
+				palabrasSpam += ss;
+
 			}
 			//El único inconveniente de esta forma, es que no lo cuenta si esta duplicado
 		}
