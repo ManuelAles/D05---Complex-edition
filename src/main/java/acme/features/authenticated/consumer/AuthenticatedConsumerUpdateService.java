@@ -44,7 +44,19 @@ public class AuthenticatedConsumerUpdateService implements AbstractUpdateService
 	public boolean authorise(final Request<Consumer> request) {
 		assert request != null;
 
-		return true;
+		Consumer consumer;
+		Principal principal;
+		int userAccountId;
+
+		principal = request.getPrincipal();
+		userAccountId = principal.getAccountId();
+		consumer = this.repository.findOneConsumerByUserAccountId(userAccountId);
+
+		if (consumer == null) {
+			return true;
+		} else {
+			return false;
+		}
 	}
 
 	@Override
