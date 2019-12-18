@@ -20,9 +20,15 @@
 	</jstl:if>
 	<acme:form-submit test="${command == 'create'}" code="employer.job.form.button.create" action="/employer/job/create" />
 	<jstl:if test="${finalMode == false}">
-		<acme:form-submit test="${command == 'show'}" code="employer.job.form.button.update" action="/employer/job/update" />
+		
 		<acme:form-submit test="${command == 'show'}" code="employer.job.form.button.publish" action="/employer/job/publish" />
 	</jstl:if>
+	
+	<acme:form-submit test="${command == 'update'}" code="employer.job.form.button.update" action="/employer/job/update" />
+	<jstl:if test="${finalMode == false}">
+		<acme:form-submit test="${command == 'show'}" code="employer.job.form.button.update" action="/employer/job/update" />
+	</jstl:if>
+	
 	<jstl:if test="${applications == 0}">
 		<acme:form-submit test="${command == 'show'}" code="employer.job.form.button.delete" action="/employer/job/delete" />
 	</jstl:if>
