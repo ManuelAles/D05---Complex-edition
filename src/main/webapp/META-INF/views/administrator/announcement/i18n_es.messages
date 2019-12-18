@@ -13,4 +13,4 @@ administrator.announcement.form.button.update = Actualizar
 administrator.announcement.form.button.create = Crear
 administrator.announcemnet.form.button.delete = Borrar
 
-administrator.announcemnet.error.spam = La cadena de texto supera el porcentaje de spam
+administrator.announcement.error.spam = La cadena de texto supera el porcentaje de spam

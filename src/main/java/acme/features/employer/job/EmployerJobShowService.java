@@ -50,6 +50,10 @@ public class EmployerJobShowService implements AbstractShowService<Employer, Job
 		request.unbind(entity, model, "reference", "title", "deadline");
 		request.unbind(entity, model, "salary", "moreInfo", "descriptor.description", "finalMode");
 
+		int numberOfApplications = 0;
+		numberOfApplications = this.repository.countApplicationsByJob(entity.getId());
+		model.setAttribute("applications", numberOfApplications);
+
 	}
 
 	@Override

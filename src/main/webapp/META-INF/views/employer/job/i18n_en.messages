@@ -36,6 +36,11 @@ employer.job.salary.eur = The monetary unit must be euros (€ or EUR)!
 employer.job.salary.higher = The salary currency have to be higher than zero!
 employer.job.error.spam = The text string exceeds the spam percentage
 employer.job.error.descriptor = You can not publish a job that has no descriptor
-employer.job.error.workload = You cannot publish a job whose percentage of total work is not equal to 100%
+employer.job.error.workload = You can not publish a job whose percentage of total work is not equal to 100%
+employer.job.error.applications = You can not delete a job with applications
+employer.job.error.finalMode = You can not update published jobs
+
 
 employer.job.form.button.return = Return
+
+

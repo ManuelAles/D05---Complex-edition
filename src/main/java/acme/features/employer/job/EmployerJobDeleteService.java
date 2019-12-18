@@ -30,7 +30,7 @@ public class EmployerJobDeleteService implements AbstractDeleteService<Employer,
 
 	@Override
 	public boolean authorise(final Request<Job> request) {
-		// se puede borrar si no tiene applications
+
 		assert request != null;
 
 		boolean result;
@@ -44,10 +44,7 @@ public class EmployerJobDeleteService implements AbstractDeleteService<Employer,
 		employer = job.getEmployer();
 		principal = request.getPrincipal();
 
-		Integer applications;
-		applications = this.repository.countApplicationsByJob(jobId);
-
-		result = employer.getUserAccount().getId() == principal.getAccountId() && applications == 0;
+		result = employer.getUserAccount().getId() == principal.getAccountId();
 
 		return result;
 	}
@@ -88,6 +85,17 @@ public class EmployerJobDeleteService implements AbstractDeleteService<Employer,
 		assert request != null;
 		assert entity != null;
 		assert errors != null;
+
+		// se puede borrar si no tiene applications
+
+		Integer applications;
+		applications = this.repository.countApplicationsByJob(entity.getId());
+		Boolean hasApplicattions;
+		hasApplicattions = applications != 0;
+		if (!errors.hasErrors()) {
+			errors.state(request, !hasApplicattions, "*", "employer.job.error.applications");
+		}
+
 	}
 
 	@Override

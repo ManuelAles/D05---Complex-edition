@@ -13,7 +13,9 @@
 		<acme:form-moment code="worker.application.form.label.moment" path="moment" readonly="true" />
 		<acme:form-textbox code="worker.application.form.label.status" path="status" readonly="true" />
 		<acme:form-textbox code="worker.application.form.label.job" path="job.title" readonly="true" />
-			<acme:form-textarea code="worker.application.form.label.rejectDecision" path="rejectedDecision" readonly="true"/>
+		<jstl:if test="${status == 'REJECTED'}">	
+		<acme:form-textarea code="worker.application.form.label.rejectDecision" path="rejectedDecision" readonly="true"/>
+		</jstl:if>
 	</jstl:if>
 
 	<acme:form-textbox code="worker.application.form.label.skills" path="skills" />
