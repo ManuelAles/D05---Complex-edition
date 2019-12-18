@@ -36,5 +36,9 @@ employer.job.salary.higher = ¡La cantidad salarial no puede ser cero!
 employer.job.error.spam = La cadena de texto supera el porcentaje de spam
 employer.job.error.descriptor = No puedes publicar un trabajo que no tiene descriptor
 employer.job.error.workload = No se puede publicar un trabajo cuyo porcentaje de trabajo total no es igual al 100%
+employer.job.error.applications = No puedes borrar un trabajo con solicitudes
+employer.job.error.finalMode = No puedes actualizar un trabajo publicado
+
 
 employer.job.form.button.return = Volver
+

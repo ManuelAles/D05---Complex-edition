@@ -25,5 +25,6 @@ employer.application.form.label.status.rejected = Rechazada
 
 employer.application.form.label.rejectDecision = Decisión de rechazo
 
-employer.application.status = El estatus debe ser ACEPTADO, RECHAZADO o PENDING
-employer.application.decision = Para rechazar una solicitud debes incluir una decisión
+employer.application.error.status = El estatus debe ser ACEPTADO, RECHAZADO o PENDING
+employer.application.error.decision = Para rechazar una solicitud debes incluir una decisión
+employer.application.error.error.spam = La decisión de rechazo no puede superar el porcentaje de spam

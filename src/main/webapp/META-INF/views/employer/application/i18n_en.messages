@@ -32,7 +32,8 @@ employer.application.form.label.status.rejected =  Rejected
 
 employer.application.form.label.rejectDecision = Reject decision
 
-employer.application.status = Status must be ACCEPTED, REJECTED or PENDING
-employer.application.decision = To reject an application you must include a decision
+employer.application.error.status = Status must be ACCEPTED, REJECTED or PENDING
+employer.application.error.decision = To reject an application you must include a decision
+employer.application.error.spam = The rejection decision exceeds the spam percentage
 
 
